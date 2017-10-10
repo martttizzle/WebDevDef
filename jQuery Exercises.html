@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+<h1 style="text-align: center"> jQUERY </h1>
+<title>jQueryLesson</title>
+
+
+<body>
+<p> Chapter 13 <br> CHANGE STYLING INLINE </p><br> 
+<h1><b>Directly change or manipulate styling.</b></h1>
+ <p>$("h2.important").css("color", "red");</p>
+ 
+ <h1>Or you can change multiple properties:</h1>
+<p> $("h2.important").css({<br>
+   "font-family": "'Timees New Roman', Times, serif",<br>
+   "font-size": "1.3em",<br>
+   "color": "red"<br>
+ }): </p>
+ 
+ <p>---------------------------------------------------------------------------------------------------------------------------</p>
+ 
+ <p>Chapter 14 <br> THIS</p>
+ <h1>Inline Method to change text color:</h1>
+ <p>$("p.color_changeable").on("mouseover", function() {<br>
+    $("p.color_changeagle").css("color". "black");<br>
+    });
+ </p>
+ <h1>If you want single element changed use keyword "THIS"</h1>
+ <p>$("p.color_changeable").on("mouseover", function() { <br>
+      $("this").css("color", "black"); <br>
+      });
+ </p>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <style>
+    body{
+      background-color: #6666ff;
+    }
+    p {
+     color: aliceblue; 
+     font-size: 2.0em;
+     }
+     h1 {
+       color: lightgreen;
+     } 
+     
+</style>
+ 
+ 
+ </body>
+ </html>
