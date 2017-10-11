@@ -34,8 +34,10 @@
  <p>Chapter 15 <br> SELECT MULTIPLE ELEMENTS</p>
  <h1>You can target as many elements as you want in a single statement.</h1>
  <p>$("h3, p.not_so_important, div#fine_print,<br>ul#things_to_check li.secondary").css("color", "#999");</p>
-  
- 
+ <p>---------------------------------------------------------------------------------------------------------------------------</p>
+  <p>Chapter 16 <br> AN ALTERNATIVE FOR SELECTING MULTIPLE ELEMENTS</p>
+  <h1>By using the .add the code will be faster for the processor but not you. The first<br> target--h3--is handled normally. Additonal targets are handled with   <span style="color:red;font-style: italic">add("[selector]")</span></h1>
+  <p>$("h3").add("p.not_so_important").add("div#fine_print).add("ul#things_to_check").css("color", "#999");</p>
  
  
  <style>
