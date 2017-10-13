@@ -1,161 +1,102 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 
-<html> 
+<html>
 <head>
-    <title>jQueryLesson</title>
+<meta charset="utf-8">
+<title>jQueryLessons</title>
+<link rel="stylesheet" href="jQuery.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
 </head>
+
+<body>     
+    <header>  
+        
+        <div class="logo">
+            <img src="jq.jpg" width="150px" atl="" title="">
+        </div>
+     <div class="container">
+        <nav>
+            <li>Home</li>
+            <li>About</li>
+            <li>Work</li>
+            <li>Contact</li>
+        </nav>            
+    </div> 
+    </header>
     
-<h2 class="hT"> jQuery </h2>
+    <div class="stateM">
+            <h2>Write Less, Do more</h2>
+        </div> 
+        
+<article class="art">
+    <p class="subT"> Chapter 13: CHANGE STYLING INLINE </p>
+    <h1>Directly change or manipulate styling.</h1>
+    <p>$("h2.important").css("color", "red");</p>
+
+    <h1>Or you can change multiple properties:</h1>
+    <p> $("h2.important").css({<br>
+    "font-family": "'Timees New Roman', Times, serif",<br>
+    "font-size": "1.3em",<br>
+    "color": "red"<br>
+    }): </p>
 
 
-<body>
-<p class="subT"> Chapter 13 <br> CHANGE STYLING INLINE </p><br> 
-<h1><b>Directly change or manipulate styling.</b></h1>
- <p>$("h2.important").css("color", "red");</p>
- 
- <h1>Or you can change multiple properties:</h1>
-<p> $("h2.important").css({<br>
-   "font-family": "'Timees New Roman', Times, serif",<br>
-   "font-size": "1.3em",<br>
-   "color": "red"<br>
- }): </p>
- 
-  
- 
- <p class="subT">Chapter 14 <br> THIS</p>
- <h1>Inline Method to change text color:</h1>
- <p>$("p.color_changeable").on("mouseover", function() {<br>
-    $("p.color_changeagle").css("color". "black");<br>
-    });
- </p>
- <h1>If you want single element changed use keyword "THIS"</h1>
- <p>$("p.color_changeable").on("mouseover", function() { <br>
-      $("this").css("color", "black"); <br>
-      });
- </p>
-  
- <p class="subT">Chapter 15 <br> SELECT MULTIPLE ELEMENTS</p>
- <h1>You can target as many elements as you want in a single statement.</h1>
- <p>$("h3, p.not_so_important, div#fine_print,<br>ul#things_to_check li.secondary").css("color", "#999");</p>
- 
-  <p class="subT">Chapter 16 <br> AN ALTERNATIVE FOR SELECTING MULTIPLE ELEMENTS</p>
-  <h1>By using the .add the code will be faster for the processor but not you. The first<br> target--h3--is handled normally. Additonal targets are handled with   <span style="color:red;font-style: italic">add("[selector]")</span></h1>
-  <p>$("h3").add("p.not_so_important").add("div#fine_print).add("ul#things_to_check").css("color", "#999");</p>
- 
-  <p class="subT">Chapter 17 <br> REPLACE AN ID</p>
+
+    <p class="subT">Chapter 14: THIS</p>
+     <h1>Inline Method to change text color:</h1>
+        <p>$("p.color_changeable").on("mouseover", function() {<br>
+        $("p.color_changeagle").css("color". "black");<br>
+        });
+        </p>
+        <h1>If you want single element changed use keyword "THIS"</h1>
+        <p>$("p.color_changeable").on("mouseover", function() { <br>
+          $("this").css("color", "black"); <br>
+          });
+        </p>
+
+    <p class="subT">Chapter 15: SELECT MULTIPLE ELEMENTS</p>
+    <h1>You can target as many elements as you want in a single statement.</h1>
+    <p>$("h3, p.not_so_important, div#fine_print,<br>ul#things_to_check li.secondary").css("color", "#999");</p>
+
+    <p class="subT">Chapter 16: AN ALTERNATIVE FOR SELECTING MULTIPLE ELEMENTS</p>
+    <h1>By using the .add the code will be faster for the processor but not you. The first<br> target--h3--is handled normally. Additonal targets are handled with add("[selector]") </h1>
+    <p>$("h3").add("p.not_so_important").add("div#fine_print)   .add("ul#things_to_check").css("color", "#999");</p>
+
+    <p class="subT">Chapter 17: REPLACE AN ID</p>
     <h1>replace an "id" or "class" with another one, using the <span style='font-style: italic; color: red'>attr() </span> method</h1>
- <p>$("div#d1").on("mouseover", function() {<br>
+    <p>$("div#d1").on("mouseover", function() {<br>
      $(this).attr("id", "d2");<br>
      });</p>
-   
 
- <p class="subT">Chapter 18 <br> REMOVE THINGS </p>
- <h1>You can remove all elements or leave the elements and remove contents with remove() and empty()<br>example:</h1>
- <p>$("img").remove(); OR<br>$("p.expendable").remove(); </p>
- <h1>To leave the opening and closing tags but delete the content:</h1>
+    <p class="subT">Chapter 18: REMOVE THINGS </p>
+    <h1>You can remove all elements or leave the elements and remove contents with remove() and empty()<br>example:</h1>
+    <p>$("img").remove(); OR<br>$("p.expendable").remove(); </p>
+    <h1>To leave the opening and closing tags but delete the content:</h1>
     <p>$("p.customizable").empty();</p><br>
     <h1>You can fill empty paragraphs with new content using text() or html() methods</h1>
     <p>$("h3#greeting").text("Hi");</p>
     <h1>Remove all paragraphs and ordered lists including their tags.</h1>
     <p>$("p").add("ol").remove();</p>
- <p class="subT">Chapter 19 <br> TOGGLE A CLASS </p>
- <h1>The toggleClass() method adds the class if the element doesnt have the class and removes the class if the element does have the class.<br>example:</h1><br>
- <p> button> id="toggle_images"> HIDE/UNHIDE_IMAGES /button> <br><br> .invisible {<br> display:none;<br>}<br><br>$("button#toggle_images").on("Click", function() {<br>$(img).toggleClass("invisible");<br>}); </p>
+
+    <p class="subT">Chapter 19: TOGGLE A CLASS </p>
+    <h1>The toggleClass() method adds the class if the element doesnt have the class and removes the         class if the element does have the class.<br>example:</h1><br>
+    <p> button> id="toggle_images"> HIDE/UNHIDE_IMAGES /button> <br><br> .invisible {<br> display:none;     <br>}<br><br>$("button#toggle_images").on("Click", function()                                       {<br>$(img).toggleClass("invisible");     <br>}); </p>
     <h1>Toggle the class "fade" for all paragraphs whose class is "extra" and all images whose class is "extra".</h1>
     <p>$("p.extra, img.extra").toggleClass("fade");</p>
-    <h1>When the user mouses over a paragraph, a class toggles for that paragraph. When the user mouses out, it's toggled again. Make up the paragraph ID and the class name. </h1><p>$("p#graph3").on("mouseover", function() {<br>
-  $(this).toggleClass("big");<br>
-});<br>
-$("p#graph3").on("mouseout", function() {<br>
-  $(this).toggleClass("big");<br>
-});</p>
- 
- 
- <p class="subT"> Chapter 20 <br> REPLACE THINGS </p>
- <h1>To completely remove all elements and all on contents(blank) you use replaceWith(). You type in the tags and id's and etc...for the replacement text.<br>example:</h1><br> <p>$("p>#greeting").replaceWith("p id='greeting'<br>class='austrailian'>em>G'day,Mate./em>/p>
-</p>
-<p class="subT"> Chapter 21 <br> ANOTHER WAY TO REPLACE</p>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- <style>
-     
-    body{
-      background-color: #001a00;
-      background-image:url(jquery-icon.png);
-      background-repeat:repeat; 
-      background-size:  50000px;  
-    }  
-    .hT {
-        text-align: center;
-        font-size: 10.5em;
-        color: lightgreen;
-        border: 5.55px inset #003300;
-        height: 300px;
-        background-image: url(jq.jpg);
-        background-repeat: repeat;
-        background-size: 29px;
-        text-shadow: 3.5px 3.5px black;
-        padding-top: 2.9%;
-        margin-top: 10px;   
-     }
-    p {
-     color:darkgray; 
-     font-size: 2.0em;
-    }
-     h1 {
-       color: #00cc00;
-    } 
-     p.subT {
-         text-align: center;
-         text-shadow: 2px 2px black;
-         font-weight: 900;
-         font-size: 3.2em; 
-         color:  #009900;
-         background-image: url(bkgd.png);
-         background-repeat: repeat;
-         background-size: 100px;
-         background-color: #003300;
-         margin-right: 10px;
-         border: inset 1.0px #00330d;
-         border-radius: 30px;
-     }
-     
-</style>
- 
- 
- </body>
+    <h1>When the user mouses over a paragraph, a class toggles for that paragraph. When the user mouses out, it's toggled again. Make up the paragraph ID and the class name. </h1>            <p>$("p#graph3").on("mouseover", function() {<br>
+    $(this).toggleClass("big");<br>
+    });<br>
+    $("p#graph3").on("mouseout", function() {<br>
+    $(this).toggleClass("big");<br>
+    });</p>
+
+    <p class="subT"> Chapter 20: REPLACE THINGS </p>
+    <h1>To completely remove all elements and all on contents(blank) you use replaceWith(). You type in the tags and id's and etc...for the replacement text.<br>example:</h1><br>             <p>$("p>#greeting").replaceWith("p id='greeting'<br>class='austrailian'>em>G'day,Mate./em>/p>
+    </p>
+    <p class="subT"> Chapter 21: ANOTHER WAY TO REPLACE</p>
+</article>
+        
+    
+</body>
  </html>
+ 
