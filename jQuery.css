@@ -13,7 +13,7 @@ h2{
 .container{
     max-width: 960px;
     width: 96%;
-    margin: auto;
+    margin: auto; 
 }
 .content h2{
     text-align: left;
@@ -64,13 +64,13 @@ h1 {
     text-shadow: 2px 2px black;
     font-size: 1.9em;
 } 
-.art{
+.art {
     max-width: 960px;
     width: 96%;
     margin: auto;
     background:#666699;
 }
-.stateM{
+.stateM {
     max-width: 960px;
     width: 96%;
     margin: auto;
@@ -79,3 +79,15 @@ h1 {
     font-size: 14px;
     
 }
+a:hover {
+     text-decoration: none; 
+     color: #2d2272;
+}
+a {
+    color:#00cc00;
+    text-decoration: none;  
+}
+.form {
+  text-align: right;  
+}
+ 
