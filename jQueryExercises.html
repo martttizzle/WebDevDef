@@ -16,17 +16,17 @@
         </div>
      <div class="container">
         <nav>
-            <li>Home</li>
-            <li>About</li>
-            <li>Work</li>
-            <li>Contact</li>
+            <li><a href="http://www.youtube.com">YouTube</a></li>
+            <li><a href="https://www.google.com/search?source=hp&q=w3schools&oq=w3&gs_l=psy-ab.3.1.35i39k1l2j0i20i264k1l2j0l6.2351.3646.0.6446.3.2.0.0.0.0.165.325.0j2.2.0....0...1.1.64.psy-ab..1.2.324.0..0i131k1.0.3HMX8giZQpo">W3Schools</a></li>
+            <li><a href="https://www.google.com/search?q=stack+overflow&oq=stack+overflow&gs_l=psy-ab.3..35i39k1j0i20i264k1j0l8.65061.77060.0.77987.24.21.2.0.0.0.464.2388.0j8j0j2j1.12.0....0...1.1.64.psy-ab..11.13.2547.6..0i67k1j0i131k1j0i10k1j0i3k1.311.JZmNIrsT9q8">Stack Overflow</a></li>
+            <li><a href="https://github.com/login">Git Hub</a></li>
         </nav>            
     </div> 
     </header>
     
     <div class="stateM">
             <h2>Write Less, Do more</h2>
-        </div> 
+    </div> 
         
 <article class="art">
     <p class="subT"> Chapter 13: CHANGE STYLING INLINE </p>
@@ -35,7 +35,7 @@
 
     <h1>Or you can change multiple properties:</h1>
     <p> $("h2.important").css({<br>
-    "font-family": "'Timees New Roman', Times, serif",<br>
+    "font-family": "'Times New Roman', Times, serif",<br>
     "font-size": "1.3em",<br>
     "color": "red"<br>
     }): </p>
@@ -59,7 +59,7 @@
     <p>$("h3, p.not_so_important, div#fine_print,<br>ul#things_to_check li.secondary").css("color", "#999");</p>
 
     <p class="subT">Chapter 16: AN ALTERNATIVE FOR SELECTING MULTIPLE ELEMENTS</p>
-    <h1>By using the .add the code will be faster for the processor but not you. The first<br> target--h3--is handled normally. Additonal targets are handled with add("[selector]") </h1>
+    <h1>By using the .add the code will be faster for the processor but not you. The first<br> target--h3--is handled normally. Additonal targets are handled with <span style='font-style: italic; color: red'>add("[selector]") </span></h1>
     <p>$("h3").add("p.not_so_important").add("div#fine_print)   .add("ul#things_to_check").css("color", "#999");</p>
 
     <p class="subT">Chapter 17: REPLACE AN ID</p>
@@ -69,18 +69,18 @@
      });</p>
 
     <p class="subT">Chapter 18: REMOVE THINGS </p>
-    <h1>You can remove all elements or leave the elements and remove contents with remove() and empty()<br>example:</h1>
+    <h1>You can remove all elements or leave the elements and remove contents with <span style='font-style: italic; color: red'>remove()</span> and <span style='font-style: italic; color: red'>empty()</span><br>example:</h1>
     <p>$("img").remove(); OR<br>$("p.expendable").remove(); </p>
     <h1>To leave the opening and closing tags but delete the content:</h1>
     <p>$("p.customizable").empty();</p><br>
-    <h1>You can fill empty paragraphs with new content using text() or html() methods</h1>
+    <h1>You can fill empty paragraphs with new content using <span style='font-style: italic; color: red'>text()</span> or<span style='font-style: italic; color: red'> html()</span> methods</h1>
     <p>$("h3#greeting").text("Hi");</p>
     <h1>Remove all paragraphs and ordered lists including their tags.</h1>
     <p>$("p").add("ol").remove();</p>
 
     <p class="subT">Chapter 19: TOGGLE A CLASS </p>
-    <h1>The toggleClass() method adds the class if the element doesnt have the class and removes the         class if the element does have the class.<br>example:</h1><br>
-    <p> button> id="toggle_images"> HIDE/UNHIDE_IMAGES /button> <br><br> .invisible {<br> display:none;     <br>}<br><br>$("button#toggle_images").on("Click", function()                                       {<br>$(img).toggleClass("invisible");     <br>}); </p>
+    <h1>The <span style='font-style: italic; color: red'>toggleClass()</span> method adds the class if the element doesnt have the class and removes the         class if the element does have the class.<br>example:</h1><br>
+    <p> button> id="toggle_images"> HIDE/UNHIDE_IMAGES /button> <br><br> .invisible {<br> display:none;<br>}<br><br>$("button#toggle_images").on("Click", function()                                       {<br>$(img).toggleClass("invisible");<br>}); </p>
     <h1>Toggle the class "fade" for all paragraphs whose class is "extra" and all images whose class is "extra".</h1>
     <p>$("p.extra, img.extra").toggleClass("fade");</p>
     <h1>When the user mouses over a paragraph, a class toggles for that paragraph. When the user mouses out, it's toggled again. Make up the paragraph ID and the class name. </h1>            <p>$("p#graph3").on("mouseover", function() {<br>
@@ -91,9 +91,10 @@
     });</p>
 
     <p class="subT"> Chapter 20: REPLACE THINGS </p>
-    <h1>To completely remove all elements and all on contents(blank) you use replaceWith(). You type in the tags and id's and etc...for the replacement text.<br>example:</h1><br>             <p>$("p>#greeting").replaceWith("p id='greeting'<br>class='austrailian'>em>G'day,Mate./em>/p>
+    <h1>To completely remove all elements and all on contents(blank) you use <span style='font-style: italic; color: red'>replaceWith()</span>. You type in the tags and id's and etc...for the replacement text.<br>example:</h1><br>             <p>$("p>#greeting").replaceWith("p id='greeting'<br>class='austrailian'>em>G'day,Mate./em>/p>
     </p>
     <p class="subT"> Chapter 21: ANOTHER WAY TO REPLACE</p>
+    
 </article>
         
     
