@@ -20,10 +20,35 @@
             <li><a href="https://www.google.com/search?source=hp&q=w3schools&oq=w3&gs_l=psy-ab.3.1.35i39k1l2j0i20i264k1l2j0l6.2351.3646.0.6446.3.2.0.0.0.0.165.325.0j2.2.0....0...1.1.64.psy-ab..1.2.324.0..0i131k1.0.3HMX8giZQpo" target="_blank">W3Schools</a></li>
             <li><a href="https://www.google.com/search?q=stack+overflow&oq=stack+overflow&gs_l=psy-ab.3..35i39k1j0i20i264k1j0l8.65061.77060.0.77987.24.21.2.0.0.0.464.2388.0j8j0j2j1.12.0....0...1.1.64.psy-ab..11.13.2547.6..0i67k1j0i131k1j0i10k1j0i3k1.311.JZmNIrsT9q8" target="_blank">Stack Overflow</a></li>
             <li><a href="https://github.com/login" target="_blank">Git Hub</a></li>
-     <form class="form">
-       <input type="text">
-       <input type="submit" value="search">
-    </form>
+<form>
+    <select id="chpSlct"> 
+     <option value="" selected="selected"> 
+     SELECT CHAPTER </option>  
+          <option value="AL">CH 13: CHANGE STYLING INLINE</option>
+          <option value="AK">CH 14: THIS</option>
+          <option vaule="AZ">CH 15: SELECT MULTIPLE ELEMENTS</option>
+          <option value="AR">CH 16: AN ALTERNATIVE FOR SELECTING MULTIPLE ELEMNTS</option> 
+          <option vaule="AZ">CH 17: REPLACE AND ID</option>
+          <option vaule="AZ">CH 18: REMOVE THINGS</option>
+          <option vaule="AZ">CH 19: TOGGLE A CLASS</option>
+          <option vaule="AZ">CH 20: REPLACE THINGS</option>
+          <option vaule="AZ">CH 21: ANOTHER WAY TO REPLACE</option>
+          <option vaule="AZ">CH 22: VARIABLES IN JQUERY</option>
+          <option vaule="AZ">CH 23: VARIABLE NAMES LEGAL AND ILLEGAL</option>
+          <option vaule="AZ">CH 24: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+          <option vaule="AZ">CH 25: SELECT MULTIPLE ELEMENTS</option>
+        </select>&nbsp;&nbsp;
+      <input type="submit" value="Submit Form"> 
+</form>
         </nav>            
     </div> 
     </header>
@@ -68,7 +93,7 @@
     <p>$("h3").add("p.not_so_important").add("div#fine_print)   .add("ul#things_to_check").css("color", "#999");</p>
 
     <p class="subT">Chapter 17: REPLACE AN ID</p>
-    <h1>replace an "id" or "class" with another one, using the <span style='font-style: italic; color: red'>attr() </span> method</h1>
+    <h1>Replace an "id" or "class" with another one, using the <span style='font-style: italic; color: red'>attr() </span> method</h1>
     <p>$("div#d1").on("mouseover", function() {<br>
      $(this).attr("id", "d2");<br>
      });</p>
@@ -84,7 +109,7 @@
     <p>$("p").add("ol").remove();</p>
 
     <p class="subT">Chapter 19: TOGGLE A CLASS </p>
-    <h1>The <span style='font-style: italic; color: red'>toggleClass()</span> method adds the class if the element doesnt have the class and removes the         class if the element does have the class.<br>example:</h1><br>
+    <h1>The <span style='font-style: italic; color: red'>toggleClass()</span> method adds the class if the element doesnt have the class and removes the class if the element does have the class.<br>example:</h1>
     <p> button> id="toggle_images"> HIDE/UNHIDE_IMAGES /button> <br><br> .invisible {<br> display:none;<br>}<br><br>$("button#toggle_images").on("Click", function()                                       {<br>$(img).toggleClass("invisible");<br>}); </p>
     <h1>Toggle the class "fade" for all paragraphs whose class is "extra" and all images whose class is "extra".</h1>
     <p>$("p.extra, img.extra").toggleClass("fade");</p>
@@ -96,10 +121,49 @@
     });</p>
 
     <p class="subT"> Chapter 20: REPLACE THINGS </p>
-    <h1>To completely remove all elements and all on contents(blank) you use <span style='font-style: italic; color: red'>replaceWith()</span>. You type in the tags and id's and etc...for the replacement text.<br>example:</h1><br>             <p>$("p>#greeting").replaceWith("p id='greeting'<br>class='austrailian'>em>G'day,Mate./em>/p>
+    <h1>To completely remove all elements and all on contents(blank) you use <span style='font-style: italic; color: red'>replaceWith()</span>. You type in the tags and id's and etc...for the replacement text.<br>example:</h1>             <p>$("p>#greeting").replaceWith("p id='greeting'<br>class='austrailian'>em>G'day,Mate./em>/p>
     </p>
-    <p class="subT"> Chapter 21: ANOTHER WAY TO REPLACE</p>
-    
+     
+<p class="subT"> Chapter 21: ANOTHER WAY TO REPLACE </p>
+    <h1>
+    You can select elements by their contents and
+    target any headings that contain the text you want.
+    The CSS selector name is wrapped in quotation mars, and then in parantheses.
+    Instead of a # that would select an ID, you write a colon ":", then keyword <span style='font-style: italic; color: red'>Contains</span>
+</h1>
+<p>$("h3:contains('Hello,Dude')");</p>
+
+<h1>Paragraphs contain "hazard" replaced by class"bold". </h1> 
+<p>$("p:contains('hazard')").attr("class", "bold");</p> 
+<h1> Paragraphs contain "hazard" replace their class with "bold". </h1> 
+<p>$("p:contains('hazard')").attr("class", "bold");</p>
+
+<p class="subT">Chapter 22: VARIABLES IN JQUERY</p>
+    <h1>
+        You can store the CSS selector into a <span style='font-style: italic; color: red'>variable</span>.
+    </h1>
+<p>
+    var tgt = "p#slider";
+    var slide_speed = 2500;<br>
+    $(tgt).hide();<br>
+    $(tgt).slideDown(slide_speed);<br>
+    $("body").on("click", function() {<br>
+      $(tgt).slideUp();<br>
+    });
+</p>
+  
+ <p class="subT">Chapter 23 :VARIABLES NAMES LEGAL AND ILLEGAL</p>
+<h1>
+    You can name variables anthying you like as long as you follow javascript's <span style='font-style: italic; color: red'>variable-naming rules</span>.
+    <ul>
+        <li>Can't be enclosed in quotation marks.</li>
+        <li>Can't contain space.</li>
+        <li>Can contain only letters, numbers, dollar signs, and underscores.</li>
+        <li>Can't start with a number.</li>
+        <li>Use camelCase when name variables.</li>
+    </ul>
+</h1>
+   
 </article>
         
     
