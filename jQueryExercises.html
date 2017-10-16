@@ -24,6 +24,7 @@
     <select id="chpSlct"> 
      <option value="" selected="selected"> 
      SELECT CHAPTER </option>  
+          <option value="AL">CH 12: SHOW AND TOGGLE</option>
           <option value="AL">CH 13: CHANGE STYLING INLINE</option>
           <option value="AK">CH 14: THIS</option>
           <option vaule="AZ">CH 15: SELECT MULTIPLE ELEMENTS</option>
@@ -58,6 +59,14 @@
     </div> 
         
 <article class="art">
+    <p class="subT">Chapter 12: SHOW AND TOGGLE</p>
+    <h1>You can also show and hide things instantly. <span style='font-style: italic; color: red'> .show() </span>instantly displays a div(including all its contents) that has been hidden:</h1>
+    <p>$("div#onceHidden").show();</p>
+	<h1>The following code <span style='font-style: italic; color: red'>toggle()</span> switches back and forth. It makes instantly visible all ordered lists of a certain class<br> if they're hidden - and hides them if they're visible:</h1>
+	<p>$("ol.switched").toggle();</p>
+	<h1>You can add "slow", "fast", or enter a number to determine the speed of <span style='font-style: italic; color: red'> show(), hide(), and toggle()</span>.</h1> 
+    <p>$("div#d3").toggle(3000);</p> 
+    
    
     <p class="subT"> Chapter 13: CHANGE STYLING INLINE </p>
     <h1>Directly change or manipulate styling.</h1>
