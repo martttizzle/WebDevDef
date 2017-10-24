@@ -2,12 +2,37 @@
 $("#b1").on("click", function() {
 $("h1").slideToggle(1500);
  $("p").toggleClass("big");
-if ($("#b1").text() === "Remove All Text") {   $(this).text("  Reset  ");
+if ($("#b1").text() === "Remove All Text") {   $(this).text("Reset");
 }else{
     $("#b1").text("Remove All Text");
 }
 });
 
 
+//Option drop down menu
+  function selectChp() {
+let a = document.getElementById("chpSlct").value;
+    console.log(a);
+    location.href = "#" + a;
+  } 
+
+//Back to top button
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
  
   
