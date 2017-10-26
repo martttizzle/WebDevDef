@@ -7,32 +7,29 @@ body{
     
 }
 .bHideText{
-    position: absolute;
-    right: 30em;
-    top: 10.5em;
+    position: relative;
+    left: 58.08;
     color: #00cc00;
     background-color:#38588c; 
     font-size: 16px;  
     border: solid #00cc00 0.9px;
 }
 .findButton{
-    position: absolute;
-    left: 27.2em;
-    top: 0.0em;
+    position: relative;
+    top: 87.2%;
     color: #00cc00;
     background-color:#38588c; 
     font-size: 16px;  
-    border: solid #00cc00 0.9px;
-    
+    border: solid #00cc00 0.9px;   
 }
-
 .dropMenu{
-    position: absolute;
+    position: relative;
     right: 62em;
     top: 10.5em;
 }
 .container{
     max-width: 960px;
+    min-width: 400px;
     width: 96%;
     margin: auto; 
 }

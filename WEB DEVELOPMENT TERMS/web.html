@@ -71,8 +71,8 @@ This way we can work with the data as JavaScript objects, with no complicated pa
 
   
 <p>
-var myObj = { "name":"John", "age":31, "city":"New York" };
-var myJSON = JSON.stringify(myObj);
+var myObj = { "name":"John", "age":31, "city":"New York" };<br>
+var myJSON = JSON.stringify(myObj);<br>
 window.location = "demo_json.php?x=" + myJSON; 
 </p>
         
@@ -83,6 +83,19 @@ window.location = "demo_json.php?x=" + myJSON;
     <p>Why MEAN Stack?</p>
    <p>The acronym "MEAN" stands for "MongoDB Express.js AngularJS Node.js" and represents a group of technologies which are known to synergize well together. The major benefit of the MEAN stack is that it's extremely quick to prototype with. Node.js allows you to use Javascript on the backend as well as the frontend which can save you from having to learn a separate language. In addition, the NoSQL nature of MongoDB allows you to quickly change and alter the data layer without having to worry about migrations, which is a very valuable attribute when you're trying to build a product without clear specifications. Finally, these technologies have a lot of community support behind them so finding answers to questions or hiring help is going to be much easier using these technologies.</p>
      <a class="MEAN" href="http://hackhands.com/how-to-get-started-on-the-mean-stack/" target="_blank">Full tutorial in Download MEAN stack components</a> 
+<p>What is the difference between Apache and node.js?</p>
+
+<p>Apache and Nginx are both HTTP servers. They can serve static files like (.jpg and .html files) or dynamic pages (like a Wordpress blog or forum written in a language like PHP or Python). Apache/nginx need to be configured to recognize the URLs that users will be requesting and route them to the right place.<br>
+
+<br>So, for example, with a typical PHP site (like a Wordpress blog) you tell Apache that any file that ends with .php should be interpreted as PHP code, so when the user visits "http://myblog.com/tag.php?q=mytag", for example, Apache will launch the PHP interpreter to read the file and process it into an HTML page. As part of this process, PHP may talk to a MySQL database and use that to generate the page. Lastly, PHP gives the final HTML code to Apache to send to the user's browser.<br><br>
+
+    So, far so good?<br><br>
+
+Now, Node is a bit different. It's a programming environment like PHP that lets you talk to database, make dynamic pages, etc. However, it differs in that <strong>it includes an HTTP server.</strong>  That means that it can actually act completely on its own without nginx or Apache. You can just run Node and it will be the HTTP server and also the "app server" (which actually creates your dynamic pages and talks to the DB).
+
+It's a two for one deal.
+
+Last thing to know is that when people actually deploy Node on the internet, they sometimes put another HTTP server like nginx in front of Node. That means that when a user loads a page, it first hits Nginx which can make a decision about where to route the request. This is handy if you have a big site and need to run many Node instances to handle all your traffic. This way, the single nginx server can split the work to be done among many Node.js "app servers".</p>
 <h2>Node.js</h2>   
 <p>
 <li>Node.js is an open source server framework</li>
