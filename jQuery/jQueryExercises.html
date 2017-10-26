@@ -4,243 +4,45 @@
  <head>
     <meta charset="utf-8">
     <meta name = "veiwport" content="width=device-width">
-    <title>jQueryLessons | Welcome</title>
+    <title>jQuery Home| Welcome</title>
     <link rel="stylesheet" href="jQuery.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
  </head>
- <body>   
-   <header>      
-    <div class="logo">
-      <a href="https://developers.google.com/speed/libraries/#jquery" target="_blank"><img src="jQueryImages/jq.jpg" width="150px" atl="" title=""></a>
-    </div>
-    <div class="stateM">
-      <h3 class="stateM">Write Less, Do more</h3>
-    </div>  
-    <div class="container">
-      <nav>
-        <li><a href="http://www.youtube.com" target="_blank">YouTube</a></li>
-        <li><a href="https://www.google.com/search?source=hp&q=w3schools&oq=w3&gs_l=psy-ab.3.1.35i39k1l2j0i20i264k1l2j0l6.2351.3646.0.6446.3.2.0.0.0.0.165.325.0j2.2.0....0...1.1.64.psy-ab..1.2.324.0..0i131k1.0.3HMX8giZQpo" target="_blank">W3Schools</a></li>
-        <li><a href="https://www.google.com/search?q=stack+overflow&oq=stack+overflow&gs_l=psy-ab.3..35i39k1j0i20i264k1j0l8.65061.77060.0.77987.24.21.2.0.0.0.464.2388.0j8j0j2j1.12.0....0...1.1.64.psy-ab..11.13.2547.6..0i67k1j0i131k1j0i10k1j0i3k1.311.JZmNIrsT9q8" target="_blank">Stack Overflow</a></li>
-        <li><a href="https://github.com/login" target="_blank">Git Hub</a></li>
-      </nav>            
-    </div> 
-   </header>
-    <form class="dropMenu">
-      <select id="chpSlct"> 
-       <option value="" selected="selected">SELECT CHAPTER</option>  
-       <option value="chp11">CH 11: SLIDE SOMETHING INTO VIEW</option>
-       <option value="chp12">CH 12: SHOW AND TOGGLE</option>
-       <option value="chp13">CH 13: CHANGE STYLING INLINE</option>
-       <option value="chp14">CH 14: THIS</option>
-       <option vaule="chp15">CH 15: SELECT MULTIPLE ELEMENTS</option>
-       <option value="chp16">CH 16: AN ALTERNATIVE FOR SELECTING MULTIPLE ELEMNTS</option> 
-       <option value="chp17">CH 17: REPLACE AND ID</option>
-       <option value="chp18">CH 18: REMOVE THINGS</option>
-       <option value="chp19">CH 19: TOGGLE A CLASS</option>
-       <option value="chp20">CH 20: REPLACE THINGS</option>
-       <option value="chp21">CH 21: ANOTHER WAY TO REPLACE</option>
-       <option value="chp22">CH 22: VARIABLES IN JQUERY</option>
-       <option value="chp23">CH 23: VARIABLE NAMES LEGAL AND ILLEGAL</option>
-       <option value="chp24">CH 24: PERSONALIZE A HEADING</option>
-       <option value="chp25">CH 25: ADD HTML TO EXISTING TEXT</option>
-       <option value="chp26">CH 26: CHAINING</option>
-       <option value="chp27">CH 27: SELECT MULTIPLE ELEMENTS</option>
-       <option value="chp28">CH 28: SELECT MULTIPLE ELEMENTS</option>
-       <option value="chp29">CH 29: SELECT MULTIPLE ELEMENTS</option>
-       <option value="chp30">CH 30: SELECT MULTIPLE ELEMENTS</option>
-       <option value="chp31">CH 31: SELECT MULTIPLE ELEMENTS</option>
-       <option value="chp32">CH 32: SELECT MULTIPLE ELEMENTS</option>
-       <option value="chp33">CH 33: SELECT MULTIPLE ELEMENTS</option>
-       <option value="chp34">CH 34: SELECT MULTIPLE ELEMENTS</option>
-      </select>&nbsp;&nbsp;
-      <input type="submit" value="Find" class="findButton" onClick="selectChp();"> 
-    </form>   
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <button id='b1' class="bHideText" >Remove All Text</button> 
-         
-<article class="art">
-
-<div id="chp11"></div>
-    <p class="subT">Chapter 11: SLIDE SOMETHING INTO VIEW</p>
-    <h1>You can make an image gradually appear by expanding from nothing to full size. In CSS, the image is styled so it's initially hidden.</h1>
-    <p>img#dramatic {<br>
-        display: none; <br>
-    }
-    </p><h1>
-        An Html tag puts the invisble phantom on the page, along with a button:
-    </h1><p>  &#60img src="image.jpg" width ="200" id="dramatic" <br>height="218" alt="imag2">
-       <br>&#60button id='make_visible">Show the image &#60/button> </p>
-    <h1>When the button is clicked jQuery slides the image into view using <span style='font-style: italic; color: red'>slideDown() </span>:</h1>
-    <p>$("button#make_visible").on("click", function() { <br>
-      $("img#dramatic").slideDown();<br>
-      });
-    </p>
-    <h1>You can also use <span style='font-style: italic; color: red'>slideUp()</span> to make it out of view and include <span style='font-style: italic; color: red'>time</span> in milliseconds.</h1><p>
-    $("img#dramatic").slideUp(<span style=' color: blue'><strong>5000</strong></span>);
-    </p>
-<div id="chp12"></div>
-    <p class="subT">Chapter 12: SHOW AND TOGGLE</p>
-    <h1>You can also show and hide things instantly. <span style='font-style: italic; color: red'> .show() </span>instantly displays a div(including all its contents) that has been hidden:</h1>
-    <p>$("div#onceHidden").show();</p>
-	<h1>The following code <span style='font-style: italic; color: red'>toggle()</span> switches back and forth. It makes instantly visible all ordered lists of a certain class<br> if they're hidden - and hides them if they're visible:</h1>
-	<p>$("ol.switched").toggle();</p>
-	<h1>You can add "slow", "fast", or enter a number to determine the speed of <span style='font-style: italic; color: red'> show(), hide(), and toggle()</span>.</h1> 
-    <p>$("div#d3").toggle(3000);</p> 
-    
-<div id="chp13"></div>
-    <p class="subT"> Chapter 13: CHANGE STYLING INLINE </p>
-    <h1>Directly change or manipulate styling using<span style='font-style: italic; color: red'> css("color", "red ")</span> . </h1>
-    <p>$("h2.important").css("color", "red");</p>
-
-    <h1>Or you can change multiple properties:</h1>
-    <p> $("h2.important").css({<br>
-    "font-family": "'Times New Roman', Times, serif",<br>
-    "font-size": "1.3em",<br>
-    "color": "red"<br>
-    }): </p>
-<div id="chp14"></div>
-    <p class="subT">Chapter 14: THIS</p>
-     <h1>Inline Method to change text color:</h1>
-        <p>$("p.color_changeable").on("mouseover", function() {<br>
-        $("p.color_changeagle").css("color". "black");<br>
-        });
-        </p>
-        <h1>If you want single element changed use keyword <span style='font-style: italic; color: red'>"THIS"  </span>.</h1>
-        <p>$("p.color_changeable").on("mouseover", function() { <br>
-          $("this").css("color", "black"); <br>
-          });
-        </p>
-<div id="chp15"></div>
-    <p class="subT">Chapter 15: SELECT MULTIPLE ELEMENTS</p>
-    <h1>You can target as many elements as you want in a single statement.</h1>
-    <p>$("h3, p.not_so_important, div#fine_print,<br>ul#things_to_check li.secondary").css("color", "#999");</p>
-    
-<div id="chp16"></div>
-    <p class="subT">Chapter 16: AN ALTERNATIVE FOR SELECTING MULTIPLE ELEMENTS</p>
-    <h1>By using the .add the code will be faster for the processor but not you. The first<br> target--h3--is handled normally. Additonal targets are handled with <span style='font-style: italic; color: red'>add("[selector]") </span></h1>
-    <p>$("h3").add("p.not_so_important").add("div#fine_print)   .add("ul#things_to_check").css("color", "#999");</p>
-    
-<div id="chp17"></div>
-    <p class="subT">Chapter 17: REPLACE AN ID</p>
-    <h1>Replace an "id" or "class" with another one, using the <span style='font-style: italic; color: red'>attr( ) </span> method</h1>
-    <p>$("div#d1").on("mouseover", function() {<br>
-     $(this).attr("id", "d2");<br>
-     });</p>
-     
-<div id="chp18"></div>
-    <p class="subT">Chapter 18: REMOVE THINGS </p>
-    <h1>You can remove all elements or leave the elements and remove contents with <span style='font-style: italic; color: red'>remove()</span> and <span style='font-style: italic; color: red'>empty()</span><br>example:</h1>
-    <p>$("img").remove(); OR<br>$("p.expendable").remove(); </p>
-    <h1>To leave the opening and closing tags but delete the content:</h1>
-    <p>$("p.customizable").empty();</p><br>
-    <h1>You can fill empty paragraphs with new content using <span style='font-style: italic; color: red'>text( )</span> or<span style='font-style: italic; color: red'> html( )</span> methods</h1>
-    <p>$("h3#greeting").text("Hi");</p>
-    <h1>Remove all paragraphs and ordered lists including their tags.</h1>
-    <p>$("p").add("ol").remove();</p>
-    
-<div id="chp19"></div>
-    <p class="subT">Chapter 19: TOGGLE A CLASS </p>
-    <h1>The <span style='font-style: italic; color: red'>toggleClass( )</span> method adds the class if the element doesnt have the class and removes the class if the element does have the class.<br>example:</h1>
-    <p> &#60button  id="toggle_images"> HIDE/UNHIDE_IMAGES &#60/button> <br><br> .invisible {<br> display:none;<br>}<br><br>$("button#toggle_images").on("Click", function()                                       {<br>$("img").toggleClass("invisible");<br>}); </p>
-    <h1>Toggle the class "fade" for all paragraphs whose class is "extra" and all images whose class is "extra".</h1>
-    <p>$("p.extra, img.extra").toggleClass("fade");</p>
-    <h1>When the user mouses over a paragraph, a class toggles for that paragraph. When the user mouses out, it's toggled again. Make up the paragraph ID and the class name. </h1>            <p>$("p#graph3").on("mouseover", function() {<br>
-    $(this).toggleClass("big");<br>
-    });<br>
-    $("p#graph3").on("mouseout", function() {<br>
-    $(this).toggleClass("big");<br>
-    });</p>
-    
-<div id="chp20"></div>    
-    <p class="subT"> Chapter 20: REPLACE THINGS </p>
-    <h1>To completely remove all elements and all on contents(blank) you use <span style='font-style: italic; color: red'>replaceWith( )</span>. You type in the tags and id's and etc...for the replacement text.<br>example:</h1>             <p>$("p #greeting").replaceWith("&#60p> id='greeting'<br>class='austrailian'>&#60em>G'day,Mate.&#60/em>&#60/p>
-    </p>
- 
- <div id="chp21"></div>        
-    <p class="subT"> Chapter 21: ANOTHER WAY TO REPLACE </p>
-    <h1>
-    You can select elements by their contents and
-    target any headings that contain the text you want.
-    The CSS selector name is wrapped in quotation mars, and then in parantheses.
-    Instead of a # that would select an ID, you write a colon ":", then keyword <span style='font-style: italic; color: red'>Contains</span>
-    </h1>
-    <p>$("h3:contains('Hello,Dude')");</p>
-
-    <h1>Paragraphs contain "hazard" replaced by class"bold". </h1> 
-    <p>$("p:contains('hazard')").attr("class", "bold");</p> 
-    <h1> Paragraphs contain "hazard" replace their class with "bold". </h1> 
-    <p>$("p:contains('hazard')").attr("class", "bold");</p>
-    
-<div id="chp22"></div>
-    <p class="subT">Chapter 22: VARIABLES IN JQUERY</p>
-    <h1>
-        You can store the CSS selector into a <span style='font-style: italic; color: red'>variable</span>.
-        </h1>
-    <p>
-    var tgt = "p#slider";
-    var slide_speed = 2500;<br>
-    $(tgt).hide();<br>
-    $(tgt).slideDown(slide_speed);<br>
-    $("body").on("click", function() {<br>
-      $(tgt).slideUp();<br>
-    });
-    </p>
-<div id="chp23"></div> 
-     <p class="subT">Chapter 23: VARIABLES NAMES LEGAL AND ILLEGAL</p>
-        <h1>
-    You can name variables anthying you like as long as you follow javascript's <span style='font-style: italic; color: red'>variable-naming rules</span>.
-    <ul>
-        <li>Can't be enclosed in quotation marks.</li>
-        <li>Can't contain space.</li>
-        <li>Can contain only letters, numbers, dollar signs, and underscores.</li>
-        <li>Can't start with a number.</li>
-        <li>Use camelCase when name variables.</li>
-    </ul>
-        </h1>
-        
-<div id="chp24"></div>        
-   <p class="subT">Chapter 24: PERSONALIZE A HEADING</p> 
-   <h1>You can use store input's into a variable and use it to for other headings:
-   </h1><p>$("form#userName").on("submit", function() { <br>
-     var first_name = $("input#firstName").val();<br>
-   var last_name = $("input#lastName").val();<br>
-     $("h4#personalizedQuote").text("Personal Quote for " + first_Name + " " + last_name); <br>
-      });
-    </p>
-   
-<div id="chp25"></div>   
-   <p class="subT">Chapter 25: ADD EXTISTING HTML TEXT</p>
-   <h1>If you want to bold some text in response to a user's action. do it by combining two methods you already know: <span style='font-style: italic; color: red'>html() & text()</span> . </h1>
-      <p>var okToBold = $("p#important");</p> 
-    <h1>...add the <span style='font-style: italic; color: red'>html()</span> method...</h1>
-      <p>okToBold.html(""&#60p id='important'>&#60strong>" + okToBold.text() +"&#60/strong>&#60/p>");</p>
-      <h1>
-       Example of storing the text of a paragraph into a variable.
-   </h1>
-   <p>
-      var a = $("p#id").text(); 
-   </p><h1>Another example if the user clicked a paragraph it bolded the paragraph.</h1>
-   <p>$(this).html("&#60p>&#60strong>" + $(this).text() + "&#60/strong>&#60/p>");</p>
-   <h1>Or another example would be when the user clicks out of a field, fill the field with a concatenation of "Ms.
- " plus the contents of the field.</h1>
-  <p>$("input#id").on("blur", function() {<br>
-  $(this).val("Ms. " + $(this).val());<br>
-  });</p>
+<body>
   
-    <div id="chp26"></div>
-   
-    <p class="subT">Chapter 26: CHAINING</p>
-    <h1>You can chain methods together using the dot operator <span style='font-style: italic; color: red'>.</span> between methods. </h1>
-    <p>$("div#main").css("color", "black").css("font-size", "1.5em");</p><h1>Another example with graph as a variable:</h1>
-    <p>graph.toggleClass("prominent").css("font-weight", "bold");</p><h1>Another example:</h1><p>$("input#species").attr("id", "default").val("human");</p>
-   
-   <p class="subT">Chapter 27: ADDING JQUERY TO YOUR PAGE</p>
-    <h1>jQuery is nothing but a big JavaScript file, with javaScript's extension. Your HTML document can link to a jQuery file you've stored on your hard drive, or it can link to a remote jQuery file stored on a server at a Content Delivery Network (CDN), like the one Google maintains. </h1>
-   
-</article>
+      
+ <header>      
+  <div class="container">
+    
+  <div class="logoPic">
+     <a href="https://developers.google.com/speed/libraries/#jquery" target="_blank"> 
+     <img src="jQueryImages/jq.jpg" width="129px" atl="" title=""></a>
+      <a class="logo" href="https://developers.google.com/speed/libraries/#jquery" target="blank"><h3>Write Less, Do more</h3></a>
+  </div>
+     
+    <nav>
+        <li><a href="http://www.youtube.com" target="_blank">YouTube</a></li>
         
+        <li><a href="https://www.google.com/search?source=hp&q=w3schools&oq=w3&gs_l=psy-ab.3.1.35i39k1l2j0i20i264k1l2j0l6.2351.3646.0.6446.3.2.0.0.0.0.165.325.0j2.2.0....0...1.1.64.psy-ab..1.2.324.0..0i131k1.0.3HMX8giZQpo" target="_blank">W3Schools</a></li>
+        
+        <li><a href="https://www.google.com/search?q=stack+overflow&oq=stack+overflow&gs_l=psy-ab.3..35i39k1j0i20i264k1j0l8.65061.77060.0.77987.24.21.2.0.0.0.464.2388.0j8j0j2j1.12.0....0...1.1.64.psy-ab..11.13.2547.6..0i67k1j0i131k1j0i10k1j0i3k1.311.JZmNIrsT9q8" target="_blank">Stack Overflow</a></li>
+
+        <li><a href="https://github.com/login" target="_blank">Git Hub</a></li>
+     </nav>            
+   </div>  
+  </header>
+  
+  <section id="showcase">
+   <div class="container">
+    <h1>What is jQuery?</h1>
+    <p>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>    
+    </div>    
+  </section>
+
+     <button class="button" id='b1' onClick='openJQL();'>Jquery Lesson</button> 
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="jQueryScript.js"></script>
 </body>

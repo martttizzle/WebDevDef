@@ -1,112 +1,140 @@
 body{
-    margin: 0;
+    margin:0;
     padding: 0;
     font-family: Titillium Web, "Helvetica Neue", Arial;
-    color:  #00cc00;
-    background: #2b7029;   
-    
-}
-.bHideText{
-    position: relative;
-    left: 58.08;
-    color: #00cc00;
-    background-color:#38588c; 
-    font-size: 16px;  
-    border: solid #00cc00 0.9px;
-}
-.findButton{
-    position: relative;
-    top: 87.2%;
-    color: #00cc00;
-    background-color:#38588c; 
-    font-size: 16px;  
-    border: solid #00cc00 0.9px;   
-}
-.dropMenu{
-    position: relative;
-    right: 62em;
-    top: 10.5em;
+    background:  #e6f2ff ;   
 }
 .container{
-    max-width: 960px;
-    min-width: 400px;
-    width: 96%;
+    width: 75%;
     margin: auto; 
-}
-header{
-    background: #2d2272;  
     overflow: hidden;
-    padding: 0px;
-    border-bottom: solid #00cc00 3.9px;
-}
-.logo{
-    float: left;
-    margin-left: 310px;
-    overflow: hidden;
-}
-nav{
-    float: right;
-    line-height: 90px;
-    margin-right: 0px;
-}
-nav li{
-    display: inline-block;
-    padding: 5px 20px;
-    margin-left: 10px;
-    background: #38588c;
-    line-height:  20px; 
-    border: solid #00cc00 0.9px;
 }
 
+.button{
+    position: relative;
+    left: 58.08;
+    color: #006bb3;
+    font-size: 16px;  
+    background: #b3e0ff;
+    border: double #006bb3 1.9px;
+}
+/*********HEADER*********/
+header{
+    background: #b3e0ff; 
+    overflow: hidden;
+    padding-top: 30px;
+    min-height: 20px;
+    border-bottom: ridge #006bb3 3.9px;  
+}
+/*LOGO and PIC*/
+header .logoPic{
+    float: left;
+    margin: 0; 
+}
+header .logo {
+    float: right;
+    padding-top: 31px;
+    padding-bottom: 10px;
+    padding-left: 1px;
+    color:#006bb3; 
+    font-style: italic;
+    font-size: 23.5px;
+    text-decoration: none;   
+}
+header nav{
+    float: right;
+    line-height: 100px;
+    margin-right: 10px;
+}
+ header nav li{
+    display: inline-block;
+    padding: 2px 10px;
+    margin-left: 10px;
+    line-height:  15px; 
+    background: #b3e0ff;
+    border: double #006bb3 1.9px;
+}
+ header nav li a {
+     color:  #006bb3;
+     text-decoration: none; 
+     font-size: 20px;
+     font-weight: bold;
+}
+a:hover {
+    text-decoration: none; 
+    color: #b3e0ff;
+    text-shadow: 2.9px 2.9px #006bb3;
+}
+
+
+
+
+/*****SHOWCASE*****/
+
+
+#showcase{
+  min-height:00px;
+  background:url(/jQueryImages/Nature-Beaches-Ocean-Sea-Sky-Clouds-1920-x-1280.jpg) no-repeat 0 -600px;
+  text-align:center;
+ 
+}
+
+#showcase h1{
+   margin-top:100px;
+   font-size:59px;
+   margin-bottom: 10px;
+   color:#b3e0ff;
+}
+
+#showcase p{
+  font-size:31px;
+   
+}
+/*DropMenu and button*/
+#dMenu form {
+    position: absolute;
+    left: 1418px
+}
+#dMenu button {
+    float: left;
+}
+ 
+
+/**/
 p.subT{
+    max-width: 1980px;   
     text-align: center;
-    text-shadow: 2px 2px black;
-    font-size: 2.1em; 
-    color:  #00cc00;
-    background-color: #2d2272;
-    max-width: 960px;
-    border-radius: 3px; 
-    border-bottom: solid #00cc00 2.0px;
-    border-top: solid #00cc00 2.0px;
+    text-shadow: 1.5px 1.5px black;
+    font-size: 55.5px; 
+    padding-top: 2px;
+    color: #006bb3; 
+    background-color: #b3e0ff;
+    border-bottom: solid 3px black;
 }
 p {
     color: #ffffff; 
-    font-size: 1.6em;
-    text-shadow: 2px 2px black;
+    font-size: 1.8em;
+    text-shadow: 2px 2.9px black;
+    border-bottom: solid 3px black
 }
-.big{
-    color:#d1d1e0;
-    font-size: 2.0em;
-    font-weight: 600;
-    letter-spacing: 1.19px;
-}
+
 h1 {
-    color: #00cc00;
-    text-shadow: 3px 3px black;
-    font-size: 1.9em;
-} 
-.art {
-    max-width: 960px;
-    width: 96%;
     margin: auto;
-    background:#666699;
-}
-.stateM { 
+    color: #b3e0ff;
+    padding-bottom: 0x;
+    text-shadow: 3px 3px black;
+    font-size:40.9px;
     text-align: left;
-    background-color:#2d2272;
-    font-size: 19px;
-    text-shadow: 2px 2px black;
-}
-a:hover {
-     text-decoration: none; 
-     color: #2d2272;
-}
-a {
-    color:#00cc00;
-    text-decoration: none;  
-}
-.form {
-  text-align: right;  
+     
+} 
+
+
+.art {
+    max-width: 1960px;
+    width: 95%;
+    margin: auto;
+    background:#999;
+    
 }
 #myBtn {
   display: none;

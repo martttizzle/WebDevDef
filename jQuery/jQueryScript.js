@@ -35,4 +35,27 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
  
-  
+function openJQL(){
+    window.open("TextBooklessonsjQuery.html");
+}
+
+  /*
+var total = 5;
+var imagecount = 1;
+
+function picSlider(x) {
+var image = document.getElementById('img');
+    imagecount = imagecount + x; 
+    if(imagecount > total || imagecount < 1){
+        imagecount = 1;
+    }
+    image.src = "picSlider/img"+ imagecount +".jpg";
+}
+window.setInterval(function picSlider() {
+  var image = document.getElementById('img');
+    imagecount = imagecount + 1; 
+    if(imagecount > total || imagecount < 1){
+        imagecount = 1;
+    }
+    image.src = "picSlider/img"+ imagecount +".jpg";
+},9500);*/
