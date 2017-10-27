@@ -73,69 +73,119 @@ a:hover {
 
 
 #showcase{
-  min-height:00px;
+  min-height: 500px;
   background:url(/jQueryImages/Nature-Beaches-Ocean-Sea-Sky-Clouds-1920-x-1280.jpg) no-repeat 0 -600px;
-  text-align:center;
  
 }
 
 #showcase h1{
-   margin-top:100px;
-   font-size:59px;
-   margin-bottom: 10px;
-   color:#b3e0ff;
+     margin-top:100px;
+     font-size:59px;
+     margin-bottom: 10px;
+     color:#b3e0ff;
+     text-shadow: 2px 2.9px black; 
 }
 
-#showcase p{
-  font-size:31px;
-   
+#showcase p {
+    font-size: 39px;
+    color: #b3e0ff;  
+    font-weight: bold;
+    text-shadow: 2px 2.9px black;  
 }
+
+/*button jquerylessons*/
+#jQbutton {
+    
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/*jQuery lesson Page*************************************/
+
 /*DropMenu and button*/
 #dMenu form {
-    position: absolute;
-    left: 1418px
+    float: right;
+    position: relative;
+    left: 0px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 #dMenu button {
     float: left;
+    position: relative;
+    right: 0px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
  
+/*book description */
 
-/**/
-p.subT{
-    max-width: 1980px;   
+#book {
+    min-height: 500px;
+    background:url(/jQueryImages/books.jpg) 
+    no-repeat 0 -600px;
+ 
+}
+#book p{
+    
+     margin-top: 0px;
+     font-size: 40px;
+     margin-bottom: 0px;
+     color:#b3e0ff;
+     text-shadow: 2px 2.9px black; 
+}
+#book h1{
+    
+     margin-top: 0px;
+     font-size:59px;
+     margin-bottom: 10px;
+     color:#b3e0ff;
+     text-shadow: 2px 2.9px black; 
+}
+
+
+/*chapter description and code examples sections*/
+ #art p.subT{ /*This is for heading title*/
+    font-size: 45.5px; 
     text-align: center;
     text-shadow: 1.5px 1.5px black;
-    font-size: 55.5px; 
-    padding-top: 2px;
+    background-color: #b3e0ff;   
     color: #006bb3; 
-    background-color: #b3e0ff;
-    border-bottom: solid 3px black;
-}
-p {
-    color: #ffffff; 
-    font-size: 1.8em;
-    text-shadow: 2px 2.9px black;
-    border-bottom: solid 3px black
+    position: relative;
+    bottom: 90px;
+    margin-top: 60px;
 }
 
-h1 {
-    margin: auto;
-    color: #b3e0ff;
-    padding-bottom: 0x;
-    text-shadow: 3px 3px black;
-    font-size:40.9px;
-    text-align: left;
-     
+ #art h1 { /*The text content*/
+     margin: auto;
+     position: relative;
+     top: -90px;
+     padding: 0px 70px 0px 70px;
+     color: #b3e0ff;
+     font-size:40px;
+     text-shadow: 3px 3px black;
+     text-align: left;
 } 
 
-
-.art {
-    max-width: 1960px;
-    width: 95%;
-    margin: auto;
-    background:#999;
-    
+ #art p { /* code block text*/
+     position: relative;
+     bottom: 55px;
+     top 100px;
+     padding:  50px;
+     color: #eff2f7;
+     background-color: #999;
+     font-size: 39.8px;
+     text-align: center;
+     letter-spacing: 2.3px;
+     text-shadow: 2px 2.9px black;
+     
 }
+
+#BGC{
+    background-color:#119;  
+}
+
+
 #myBtn {
   display: none;
   position: fixed;

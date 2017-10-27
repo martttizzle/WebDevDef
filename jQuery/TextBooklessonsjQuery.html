@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
- </head>
- <header>
-     <header>      
+  </head>
+<body>
+
+
+ <header>    
   <div class="container">
     
   <div class="logoPic">
@@ -31,8 +33,7 @@
      </nav>            
    </div>  
   </header>
- </header>
-<body>
+ 
     <section id="dMenu">
     <div class="container">
 <form>
@@ -65,27 +66,27 @@
       </select>&nbsp;&nbsp;
       <input type="submit" value="Find" class="button" onClick="selectChp();"> 
     </form>   
-    <button class="button" id='b1' >Remove All Text</button> 
+       <button class="button" id='b1' >Remove All Text</button> 
     </div>  
-   
-    
 </section>
    
+   <section id="book">
+       
+    <h1>A SMARTER WAY TO LEARN JQUERY</h1>
+    <p>The content for learning the critical aspects of jQuery are derived from the book written by Mark Myers called: "A Smarter Way to Learn jQuery." This section breaks down the main points of content of each chapter along with description of code. No code is shown for some chapters that do not require a demonstration.</p>
+
+       
+   </section>
    
-   
-   
-   
+    
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-   
-   
-   
-   
    
    
     
          
-<article class="art">
-
+<section id="art">
+<div class="container">
+<div id="BGC">
 <div id="chp11"></div>
     <p class="subT">Chapter 11: SLIDE SOMETHING INTO VIEW</p>
     <h1>You can make an image gradually appear by expanding from nothing to full size. In CSS, the image is styled so it's initially hidden.</h1>
@@ -104,6 +105,7 @@
     <h1>You can also use <span style='font-style: italic; color: red'>slideUp()</span> to make it out of view and include <span style='font-style: italic; color: red'>time</span> in milliseconds.</h1><p>
     $("img#dramatic").slideUp(<span style=' color: blue'><strong>5000</strong></span>);
     </p>
+    
 <div id="chp12"></div>
     <p class="subT">Chapter 12: SHOW AND TOGGLE</p>
     <h1>You can also show and hide things instantly. <span style='font-style: italic; color: red'> .show() </span>instantly displays a div(including all its contents) that has been hidden:</h1>
@@ -136,6 +138,7 @@
           $("this").css("color", "black"); <br>
           });
         </p>
+        
 <div id="chp15"></div>
     <p class="subT">Chapter 15: SELECT MULTIPLE ELEMENTS</p>
     <h1>You can target as many elements as you want in a single statement.</h1>
@@ -262,8 +265,10 @@
    
    <p class="subT">Chapter 27: ADDING JQUERY TO YOUR PAGE</p>
     <h1>jQuery is nothing but a big JavaScript file, with javaScript's extension. Your HTML document can link to a jQuery file you've stored on your hard drive, or it can link to a remote jQuery file stored on a server at a Content Delivery Network (CDN), like the one Google maintains. </h1>
-   
-</article>
+ 
+    </div>
+    </div>
+</section>
         
    
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
