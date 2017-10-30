@@ -12,7 +12,8 @@ const winCombos = [
 	[6, 4, 2]
 ]
 
-const cells = document.querySelectorAll('.cell');
+const acells = document.querySelectorAll('.cell');
+console.log(acells);
 startGame();
 
 function startGame() {
@@ -20,7 +21,10 @@ function startGame() {
 	origBoard = Array.from(Array(9).keys());
     
 	for (var i = 0; i < cells.length; i++) {
+        
+        
 		cells[i].innerText = '';
+        
 		cells[i].style.removeProperty('background-color');
 		cells[i].addEventListener('click', turnClick, false);
         
