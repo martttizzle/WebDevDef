@@ -1,5 +1,5 @@
 var origBoard;
-const huPlayer = 'O';
+const huPlayer = 'Ob';
 const aiPlayer = 'X';
 const winCombos = [
 	[0, 1, 2],
@@ -22,13 +22,18 @@ function startGame() {
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].innerText = '';
 		cells[i].style.removeProperty('background-color');
-		cells[i].addEventListener('click', turnClick, false);
+		cells[i].addEventListener('click', turnClick, false); 
         
 	}
 }
 
 function turnClick(square) {
-    console.log(square);
+    if (square.target.id === 'number'){
+        alert("yes");
+    }
+    console.log(    square.target.id );
+    
+    
 	if (typeof origBoard[square.target.id] == 'number') {
 		turn(square.target.id, huPlayer)
 		if (!checkWin(origBoard, huPlayer) && !checkTie()) turn(bestSpot(), aiPlayer);
@@ -36,7 +41,8 @@ function turnClick(square) {
 }
 
 function turn(squareId, player) {
-	origBoard[squareId] = player;
+    origBoard[squareId] = player;
+	console.log(origBoard[squareId] = player);
 	document.getElementById(squareId).innerText = player;
 	let gameWon = checkWin(origBoard, player)
 	if (gameWon) gameOver(gameWon)
