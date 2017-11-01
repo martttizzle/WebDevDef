@@ -12,8 +12,8 @@ const winCombos = [
 	[6, 4, 2]
 ]
 
-const acells = document.querySelectorAll('.cell');
-console.log(acells);
+const cells = document.querySelectorAll('.cell');
+
 startGame();
 
 function startGame() {
@@ -35,7 +35,7 @@ function turnClick(square) {
     if (square.target.id === 'number'){
         alert("yes");
     }
-    console.log(    square.target.id );
+   
     
     
 	if (typeof origBoard[square.target.id] == 'number') {
@@ -46,15 +46,26 @@ function turnClick(square) {
 
 function turn(squareId, player) {
     origBoard[squareId] = player;
-	console.log(origBoard[squareId] = player);
+	
 	document.getElementById(squareId).innerText = player;
+    
+    
 	let gameWon = checkWin(origBoard, player)
+    
+    
 	if (gameWon) gameOver(gameWon)
 }
 
 function checkWin(board, player) {
+    
+    //df***********************************************
+    
 	let plays = board.reduce((a, e, i) =>
 		(e === player) ? a.concat(i) : a, []);
+    
+    //*************************************************
+  
+    
 	let gameWon = null;
 	for (let [index, win] of winCombos.entries()) {
 		if (win.every(elem => plays.indexOf(elem) > -1)) {

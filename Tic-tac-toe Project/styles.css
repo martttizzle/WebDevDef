@@ -45,6 +45,11 @@ table tr td:last-child {
     font-size: 2em;
 }
     
+.box{
+animation-name: myanimation;
+    animation-duration: 54s;
+}
     
-    
- 
+my{
+    0%{background-color: aliceblue;}
+}
