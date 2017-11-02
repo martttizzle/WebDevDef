@@ -71,15 +71,12 @@ a:hover {
 
 /*****SHOWCASE*****/
  
-#showcase {
-    min-height: 500px;
-  background:url(/jQueryImages/Nature-Beaches-Ocean-Sea-Sky-Clouds-1920-x-1280.jpg) no-repeat 0 -500px;
- 
-}
-#picOne {
-    min-height: 500px;
-  background:url(/jQueryImages/barbados.jpg) no-repeat 0 -500px;
- 
+#picSldr {
+    min-height: 300px;
+    background:url(/jQueryImages/pic1.jpg) no-repeat 0 -500px;
+    border-bottom: solid 2.0px #006bb3;
+    border-left: solid 2.0px #006bb3;
+    border-right: solid 2.0px #006bb3;
 }
 
 #showcase h1 {
@@ -94,7 +91,7 @@ a:hover {
     font-size: 39px;
     color: #b3e0ff;  
     font-weight: bold;
-    text-shadow: 2px 2.9px black;  
+    text-shadow: 2px 1.9px black;  
 }
 
 /*button jquerylessons*/
@@ -104,7 +101,39 @@ a:hover {
     margin-bottom: 10px;
 }
 
+/*TODO LIST TODO LIST************************************/
+
+#todo{
+    background-color: lightblue;
+    width: 250px;
+    height: 300px;
+    margin: 40px;
+    position: relative;
+    left: 1390px;
+    top: 90px;
+    border: solid 1px darkblue;
+    font-size: 25px;
+    text-align: center;
+    color: red;
+    filter: alpha(opacity=.70);
+    opacity: .70;
+}
+#todo li{
+    text-align: center;
+    position: relative;
+    right: 20px;
+    line-height: 32px;
+    color: lightblue;
+} 
+
+#todo li{
+    font-size: 20px;
+    color: blueviolet;
+}
+
 /*jQuery lesson Page*************************************/
+
+
 
 /*DropMenu and button*/
 #dMenu form {
@@ -188,23 +217,7 @@ a:hover {
 #BGC{
     background-color:#119;  
 }
-#todo{
-    background-color: blue;
-    width: 250px;
-    height: 300px;
-    margin: 40px;
-    position: absolute;
-    left: 1390px;
-    top: 90px;
-    border: dashed 10px lightblue;
-}
-#todo li{
-    text-align: center;
-    position: relative;
-    right: 20px;
-    line-height: 32px;
-    color: lightblue;
-}
+
 #myBtn {
   display: none;
   position: fixed;

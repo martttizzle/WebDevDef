@@ -1,13 +1,13 @@
 
 //HIDE AND SHOW TEXT BUTTON
-$("#b1").on("click", function() {
+/*$("#b1").on("click", function() {
 $("h1").slideToggle(1500);
  $("p").toggleClass("big");
 if ($("#b1").text() === "Remove All Text") {   $(this).text("Replace All Text");
 }else{
     $("#b1").text("Remove All Text");
 }
-});
+});*/
 
 
 //Option drop down menu
@@ -41,37 +41,27 @@ function openJQL(){
 }
 
 //pichanger
-function picChanger() {
-   
-  $("#b1").on("click", function() {
-  $("#showcase").addClass("#picOne");
-});
-}
+    var   pNum =  1;
+    const total = 3;
+    var spec = ")no-repeat"+" " + "0" +" "+"-500px";
 
-
-
-
-
-
-
-/*
+window.setInterval(function picChanger() {
+    pNum = pNum + 1; 
+if (pNum > total || pNum < 1) {  
+        pNum = 1; 
+} 
+ $("#picSldr").css("background", "url(/jQueryImages/pic"+pNum+".jpg"+spec+"");  
+},8000);
  
-var total = 5;
-var imagecount = 1;
+//Text fade in
+/*window.setInterval(function () {
+  $("#title,#paraG").fadeOut(15000);
+     
+});
+ */  
 
-function picSlider(x) {
-var image = document.getElementById('img');
-    imagecount = imagecount + x; 
-    if(imagecount > total || imagecount < 1){
-        imagecount = 1;
-    }
-    image.src = "picSlider/img"+ imagecount +".jpg";
-}
-window.setInterval(function picSlider() {
-  var image = document.getElementById('img');
-    imagecount = imagecount + 1; 
-    if(imagecount > total || imagecount < 1){
-        imagecount = 1;
-    }
-    image.src = "picSlider/img"+ imagecount +".jpg";
-},9500);*/
+
+
+
+
+
