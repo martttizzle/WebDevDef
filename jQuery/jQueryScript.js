@@ -1,4 +1,4 @@
-picChanger();
+
 //HIDE AND SHOW TEXT BUTTON
 $("#b1").on("click", function() {
 $("h1").slideToggle(1500);
@@ -42,8 +42,10 @@ function openJQL(){
 
 //pichanger
 function picChanger() {
-   $("#showcase").
-    alert(a );
+   
+  $("#b1").on("click", function() {
+  $("#showcase").addClass("#picOne");
+});
 }
 
 

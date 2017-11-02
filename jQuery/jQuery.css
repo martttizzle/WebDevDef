@@ -70,15 +70,19 @@ a:hover {
 
 
 /*****SHOWCASE*****/
-
-
-#showcase{
-  min-height: 500px;
-  background:url(/jQueryImages/Nature-Beaches-Ocean-Sea-Sky-Clouds-1920-x-1280.jpg) no-repeat 0 -600px;
+ 
+#showcase {
+    min-height: 500px;
+  background:url(/jQueryImages/Nature-Beaches-Ocean-Sea-Sky-Clouds-1920-x-1280.jpg) no-repeat 0 -500px;
+ 
+}
+#picOne {
+    min-height: 500px;
+  background:url(/jQueryImages/barbados.jpg) no-repeat 0 -500px;
  
 }
 
-#showcase h1{
+#showcase h1 {
      margin-top:100px;
      font-size:59px;
      margin-bottom: 10px;
