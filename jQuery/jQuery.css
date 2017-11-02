@@ -184,8 +184,23 @@ a:hover {
 #BGC{
     background-color:#119;  
 }
-
-
+#todo{
+    background-color: blue;
+    width: 250px;
+    height: 300px;
+    margin: 40px;
+    position: absolute;
+    left: 1390px;
+    top: 90px;
+    border: dashed 10px lightblue;
+}
+#todo li{
+    text-align: center;
+    position: relative;
+    right: 20px;
+    line-height: 32px;
+    color: lightblue;
+}
 #myBtn {
   display: none;
   position: fixed;
