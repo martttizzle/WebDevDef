@@ -79,26 +79,37 @@ body{
 }
 #mainDrop ul li{
     float: left;
-    width: 350px;
-    height: 40px;
+    position: relative;
+    left: 240px;
+    width: 210px;
+    height: 35px;
     background-color:#006bb3; 
     opacity: .8;
     line-height: 40px;
     text-align: center;
-    font-size: 23px;
-    border: solid 0.9px;
-    border-top: none;
+    font-size: 20px;
+    border: solid 0.9px #004bc3;
+    text-shadow: 1.1px 1.2px black;
+     
 }
 #mainDrop li a{
     text-decoration: none;
     color:#b3e0ff;
     display: block;
+    
+    
 }
 #mainDrop li a:hover {
     background-color:#e6f2ff;
+    position: relative;
+    left: -0.1px;
+    bottom: 5px;
 }
 #mainDrop ul li ul li {
     display: none;
+    position: relative;
+    left: 0px;
+   
 }
 #mainDrop ul li:hover ul li {
     display: block;
@@ -107,22 +118,20 @@ body{
 /*****SHOWCASE*****/
  
 #picSldr {
-    min-height: 300px;
-    background:url(/jQueryImages/pic1.jpg) no-repeat 0 -500px;
-    border-bottom: solid 2.0px #006bb3;
-    border-left: solid 2.0px #006bb3;
-    border-right: solid 2.0px #006bb3;
+    background:url(/jQueryImages/pic1.jpg) no-repeat 0 -600px;
+    height: 450px;
+    border-bottom: solid 1.0px #006bb3;
 }
 #showcase h1 {
      margin-top:100px;
-     font-size:59px;
+     font-size:39px;
      margin-bottom: 10px;
      color:#b3e0ff;
      text-shadow: 2px 2.9px black; 
 }
 
 #showcase p {
-    font-size: 39px;
+    font-size: 25px;
     color: #b3e0ff;  
     font-weight: bold;
     text-shadow: 2px 1.9px black;  
@@ -130,12 +139,11 @@ body{
 
 /*button jquerylessons*/
 #jQbutton {
-    
     margin-top: 5px;
     margin-bottom: 10px;
 }
 
-/*TODO LIST TODO LIST************************************/
+/**********TODO LIST TODO LIST************************************/
 
 #todo{
     background-color: lightblue;
@@ -143,8 +151,8 @@ body{
     height: 300px;
     margin: 40px;
     position: relative;
-    left: 1390px;
-    top: 90px;
+    left: 600px;
+    top: 0px;
     border: solid 1px darkblue;
     font-size: 25px;
     text-align: center;

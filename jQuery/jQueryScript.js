@@ -43,7 +43,7 @@ function openJQL(){
 //pichanger
     var   pNum =  1;
     const total = 3;
-    var spec = ")no-repeat"+" " + "0" +" "+"-500px";
+    var spec = ")no-repeat"+" " + "0" +" "+"-600px";
 
 window.setInterval(function picChanger() {
     pNum = pNum + 1; 
@@ -51,7 +51,7 @@ if (pNum > total || pNum < 1) {
         pNum = 1; 
 } 
  $("#picSldr").css("background", "url(/jQueryImages/pic"+pNum+".jpg"+spec+"");  
-},8000);
+},10000);
  
 //Text fade in
 /*window.setInterval(function () {
