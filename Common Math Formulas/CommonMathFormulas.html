@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+ <head>
+        <title>Common Math Formulas</title>
+    <link rel="stylesheet"href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> 
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
+     
+ </head>
+    
+ <body>
+        <h1>COMMON MATH FORMULAS</h1>
+    <div id="picbox">
+        <div id="images">
+            
+        </div>
+    </div>    
+    <section id="math">
+      <div id=table><br><br>
+       <p class='para'>SELECT FORMULA:</p>
+       <form class="drpdown"> 
+        <select id="formulas">
+           <option value="slct">SELECT FORMULA</option> 
+           <option value=0>Celcius to Fehrenheit</option>
+           <option value=0>Fahrenheit to Celcius</option>
+           <option value=1>Perimeter of a Square</option>
+           <option value=2>Pythagorean Theorem</option>
+           <option value=3>Distance</option>
+           <option value=4>Speed</option>
+           <option value=5>Time</option>
+        </select>
+          
+       </form>
+       <p class="para1">ENTER VALUE(S):</p>
+       <form class="inputs">
+           <input type="text" placeholder="Enter value..."  id="inp1">
+           <input type="text" placeholder="Enter second value..." id="inp2">
+       </form>
+       
+       <p class="para2">RESULTS:</p>
+       <p id="results"></p>
+       <button id='b1'>ANSWER</button>
+     </div>  
+  </section>      
+  <section>
+      <p>need to finish formulas<br>need to make it so one box appears for formulas with one value<br>
+      need to make placeholder text show up write words for each formula type.<br>need to figure out how to make 
+      one function to read formul input then on function to line it up with formula. 
+      </p>
+  </section>        
+        
+<style>
+    
+    body{
+        font-family: monospace;
+        max-width: 1800px;
+        background-color: lightyellow;
+        margin: 0px;
+        padding:0px;
+    }
+    h1 {
+       text-align: center; 
+        font-size: 50px;
+        color: maroon;
+        text-shadow: 2px 2px black;
+    }
+    #picbox{
+         padding: 0px;
+         margin: 0px;
+         width: 450px;
+         height: 430px;
+         background-color: pink;
+         position:relative;
+         left: 1000px;
+         top: 130px; 
+         background-image: url(images/math.jpg);
+         background-size: 442px;
+    }
+    .drpdown{
+        position: relative;
+        bottom: 27px;
+        left: 450px;
+    }
+    #table{
+        position: relative;
+        left: 100px;
+        bottom: 300px;
+        width: 800px;
+        height: 500px;
+        background-color:  yellow;
+        color:green;
+        border: solid 5px green;
+    }
+    .para{
+        padding: 0px;
+        margin: 0px;
+        font-size: 34px;
+        position: relative;
+        left: 20px;
+    }
+    .para1{
+        visibility: hidden;
+        padding: 0px;
+        margin: 0px;
+        font-size: 34px;
+        position: relative;
+        left: 20px;
+        top: 40px;
+    }
+    .para2{
+        visibility: hidden;
+        padding: 0px;
+        margin: 0px;
+        font-size: 34px;
+        position: relative;
+        left: 20px;
+        top: 249px;
+    }
+    .inputs{
+        visibility: hidden;
+        position:relative;
+        top: 100px;
+        left: 200px;
+    }
+    .inputs #inp1 {
+        visibility: hidden;
+        position: relative;
+        left: 170px;
+        bottom: 87px;
+        padding: 0px;
+        margin: 0px;
+        
+    }
+    .inputs #inp2 {
+        visibility: hidden;
+        position: relative;
+        left: 191px;
+        bottom: 87px;
+        padding: 0px;
+        margin: 0px;
+    }
+    #b1 {
+        padding: 0px;
+        margin: 0px;
+        visibility: hidden;
+        position: relative;
+        bottom: 55px;
+        left: 525px;
+    }
+    #results{
+        position: relative;
+        top: 163px;
+        left: 180px;
+        font-size: 40px;
+        font-style: italic;
+        font-weight: bold;
+    }
+              
+</style>  
+<script>
+    
+var simpFormulas = {
+        pi: 3.14,
+        Cel2Fah: function(x) {
+           return ((x*1.8) +32);  
+        },
+        Fah2Cel: function (x) {
+            return ((x - 32) * 5/9);
+        },
+        permitSquare: function (x) {
+            return ((x + x) + (x + x));
+        },
+        areaSquare: function (x) {
+            return (x*4);
+        },
+        pyThag: function (legA, legB)  {
+            //pow(x,y) returns the value of x to the power of y
+            let a = Math.pow(legA,2);
+            let b = Math.pow(legB,2);
+            let c = (a + b);
+            return Math.sqrt(c);
+        },
+        distance: function (speed, time) {
+             return (speed)*(time);
+        },
+        time: function (distance, speed) {
+             return (distance / speed);
+        },
+        speed: function (distance, time) {
+            return (distance/time);
+         }
+};
+    //image matching formula
+    var clock, distance, pythag, speed, square, thermometer, images;
+    clock = "url(images/clock.jpeg)";
+    distance = "url(images/distance.png)";
+    pythag = "url(images/pythag.jpg)";
+    speed = "url(images/speed.png)";
+    square = "url(images/square.jpg)";
+    thermometer = "url(images/thermometer.jpg)";
+    
+    var images = [thermometer, square, pythag, distance, speed, clock];
+    
+  $("#formulas").change(function () { //.change give values of dropdown menu.
+    let b = parseFloat($(this).val());
+    let c = images[b];
+    $("#picbox").css("background-image", "" + c);   
+   });
+         
+   $("#formulas").change(function (){
+   $(".para1, #b1, #inp2, #inp1").css("visibility", "visible");
+      
+}); 
+    
+   $("#b1").on("click", function(){
+        $(".para2").css("visibility", "visible");      
+    });
+    
+    
+    var formulas = [simpFormulas.Cel2Fah,simpFormulas.Fah2Cel,simpFormulas.pyThag,simpFormulas,
+                    simpFormulas.distance,simpFormulas.time,simpFormulas.speed];
+    
+    //gets the value of formula from drop down. passes it to number function
+    $("#formulas").change(function () { //.change give values of dropdown menu.
+    const formNum = parseFloat($(this).val()); //value is a number. 
+        number(formNum);
+    }); 
+    
+    //pythag formula
+    function number(num) {
+        $("#b1").on("click", function( ) {
+            let legA = $("#inp1").val();
+            let legB = $("#inp2").val();
+            const pyt = formulas[num];
+            const answ = "c = " + pyt(legA,legB);
+            document.getElementById("results").innerHTML = answ;       
+        });
+    }
+    
+    
+    
+            
+</script>
+        
+   
+    </body>
+</html>

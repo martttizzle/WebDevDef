@@ -6,6 +6,7 @@ body{
     background-size: cover;
 }
 .container{
+    
     width: 75%;
     margin: auto; 
     overflow: hidden;
@@ -118,9 +119,11 @@ body{
 /*****SHOWCASE*****/
  
 #picSldr {
-    background:url(/jQueryImages/pic1.jpg) no-repeat 0 -600px;
+    max-width: 90%;
+    background:url(/jQueryI mages/pic1.jpg) no-repeat 0 -600px;
     height: 450px;
     border-bottom: solid 1.0px #006bb3;
+    
 }
 #showcase h1 {
      margin-top:100px;

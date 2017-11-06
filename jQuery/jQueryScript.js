@@ -51,7 +51,7 @@ if (pNum > total || pNum < 1) {
         pNum = 1; 
 } 
  $("#picSldr").css("background", "url(/jQueryImages/pic"+pNum+".jpg"+spec+"");  
-},10000);
+},5000);
  
 //Text fade in
 /*window.setInterval(function () {
