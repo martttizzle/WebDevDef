@@ -8,6 +8,7 @@
  </head>
     
  <body>
+       <button id="b2" onClick="test();">TestButton</button>
         <h1>COMMON MATH FORMULAS</h1>
     <div id="picbox">
         <div id="images">
@@ -20,19 +21,20 @@
        <form class="drpdown"> 
         <select id="formulas">
            <option value="slct">SELECT FORMULA</option> 
-           <option value=0>Celcius to Fehrenheit</option>
-           <option value=0>Fahrenheit to Celcius</option>
-           <option value=1>Perimeter of a Square</option>
-           <option value=2>Pythagorean Theorem</option>
-           <option value=3>Distance</option>
-           <option value=4>Speed</option>
-           <option value=5>Time</option>
+           <option value=0>Celsius to Fehrenheit</option>
+           <option value=1>Fahrenheit to Celcius</option>
+           <option value=2>Perimeter of a Square</option>
+           <option value=3>Area of a Square</option>
+           <option value=4>Pythagorean Theorem</option>
+           <option value=5>Distance</option>
+           <option value=6>Speed</option>
+           <option value=7>Time</option>
         </select>
           
        </form>
        <p class="para1">ENTER VALUE(S):</p>
        <form class="inputs">
-           <input type="text" placeholder="Enter value..."  id="inp1">
+           <input type="text" placeholder="Enter value..." id="inp1">
            <input type="text" placeholder="Enter second value..." id="inp2">
        </form>
        
@@ -160,85 +162,227 @@
     
 var simpFormulas = {
         pi: 3.14,
-        Cel2Fah: function(x) {
+    
+        Cel2Fah: function(x) {  
            return ((x*1.8) +32);  
         },
-        Fah2Cel: function (x) {
+        Fah2Cel: function (x) { 
             return ((x - 32) * 5/9);
         },
-        permitSquare: function (x) {
-            return ((x + x) + (x + x));
+        permitSquare: function (x) { 
+            return ((+x + +x) + (+x + +x));
         },
-        areaSquare: function (x) {
-            return (x*4);
+        areaSquare: function (x) { 
+            return (x * x);
+    
         },
-        pyThag: function (legA, legB)  {
+        pyThag: function (legA, legB)  { 
             //pow(x,y) returns the value of x to the power of y
             let a = Math.pow(legA,2);
             let b = Math.pow(legB,2);
             let c = (a + b);
             return Math.sqrt(c);
         },
-        distance: function (speed, time) {
-             return (speed)*(time);
+        distance: function (speed, time) { 
+             return (speed * time);
         },
-        time: function (distance, speed) {
+        speed: function (distance, time) { 
+            return (distance / time);
+         },
+        time: function (distance, speed) { 
              return (distance / speed);
-        },
-        speed: function (distance, time) {
-            return (distance/time);
-         }
-};
-    //image matching formula
-    var clock, distance, pythag, speed, square, thermometer, images;
-    clock = "url(images/clock.jpeg)";
+        }
+   };//image matching formula
+    var clock, distance, pythag, speed, square, sqArea, fahrenheit, celsius, images;
+    clock =   "url(images/clock.jpeg)";
     distance = "url(images/distance.png)";
-    pythag = "url(images/pythag.jpg)";
-    speed = "url(images/speed.png)";
-    square = "url(images/square.jpg)";
-    thermometer = "url(images/thermometer.jpg)";
+    pythag =  "url(images/pythag.jpg)";
+    speed =   "url(images/speed.jpg)";
+    square =  "url(images/square.jpg)";
+    sqArea =  "url(images/sqarea.gif)";
+    celsius = "url(images/celsius.jpg)";
+    fahrenheit = "url(images/fahrenheit.jpg)";
     
-    var images = [thermometer, square, pythag, distance, speed, clock];
+    var images = [fahrenheit, celsius, square, sqArea, pythag, distance, speed, clock];
     
-  $("#formulas").change(function () { //.change give values of dropdown menu.
+/************match pictures with formula**************/
+    
+    var nums =  [0,1,2,3];
+    var nums1 = [4,5,6,7];
+    
+   $("#formulas").change(function () { //.change give values of dropdown menu.
     let b = parseFloat($(this).val());
     let c = images[b];
     $("#picbox").css("background-image", "" + c);   
    });
-         
-   $("#formulas").change(function (){
-   $(".para1, #b1, #inp2, #inp1").css("visibility", "visible");
-      
-}); 
+
     
-   $("#b1").on("click", function(){
-        $(".para2").css("visibility", "visible");      
+/*Shows the next input boxes after formula is picked*/
+    $("#formulas").change(function () { //.change give values of dropdown menu.
+    let b = parseFloat($(this).val());
+      inputs(b);
     });
+
+    function inputs(b) {
+     for (let i = 0; i < nums.length; i++)  {
+        if (b == nums[i]) {
+           $(".para1, #b1, #inp1").css("visibility", "visible");
+        }
+        if (b == nums1[i]) {
+           $("#inp1,#inp2").css("visibility", "visible");    
+        }
+     }
+    }
     
     
-    var formulas = [simpFormulas.Cel2Fah,simpFormulas.Fah2Cel,simpFormulas.pyThag,simpFormulas,
-                    simpFormulas.distance,simpFormulas.time,simpFormulas.speed];
+        
+        
+        
+        
+/*Button to display for answer*/
+   $("#b1").on("click", function() {
+        $(".para2").css("visibility", "visible");      
+   });
+
+    
+    var formulas = [simpFormulas.Cel2Fah, simpFormulas.Fah2Cel, simpFormulas.permitSquare, simpFormulas.areaSquare, simpFormulas.pyThag, simpFormulas.distance, simpFormulas.speed, simpFormulas.time];
+    
+    
     
     //gets the value of formula from drop down. passes it to number function
+    
     $("#formulas").change(function () { //.change give values of dropdown menu.
     const formNum = parseFloat($(this).val()); //value is a number. 
-        number(formNum);
-    }); 
     
-    //pythag formula
-    function number(num) {
-        $("#b1").on("click", function( ) {
+    switch(formNum) {
+            
+        case 0:
+        c2f(formNum);
+        break;
+            
+        case 1:
+        f2c(formNum);
+        break;
+        
+        case 2:
+        permitSQ(formNum);
+        break;    
+            
+        case 3:
+        arSQ(formNum);
+        break;
+            
+        case 4:
+        pyTG(formNum);
+        break;
+            
+        case 5:
+        distForm(formNum);
+        break;
+            
+        case 6:
+        speedForm(formNum);
+        break;
+           
+        case 7:
+        timeForm(formNum);
+        break;    
+            
+        default:
+        text = "Error input";
+    }
+ }); 
+    //fahrenheit value: 0
+    function c2f(num) {
+        $("#b1").on("click", function() {
+            let degrees = $("#inp1").val();
+            let fahr= formulas[num];
+            let result = fahr(degrees);
+            document.getElementById("results").innerHTML = result;       
+        });
+    }  
+    //Celsius value: 1
+    function f2c(num) {
+        $("#b1").on("click", function() {
+            let degrees = $("#inp1").val();
+            let cels = formulas[num];
+            let result = cels(degrees);
+            document.getElementById("results").innerHTML = result;       
+        });
+    }  
+    //perimeter of a square value: 2
+    function permitSQ(num) {
+        $("#b1").on("click", function() {
+            let side = $("#inp1").val();
+            let perimeter = formulas[num];
+            let result = perimeter(side) + " total";
+            document.getElementById("results").innerHTML = result;       
+        });
+    }  
+    //area of a square value: 3
+    function arSQ(num) {
+        $("#b1").on("click", function() {
+            let side = $("#inp1").val();
+            let area = formulas[num];
+            let result = area(side) + "sq";
+            document.getElementById("results").innerHTML = result;       
+        });
+    } 
+    
+    //pythag formula value: 4
+    function pyTG(num) {
+        $("#b1").on("click", function() {
             let legA = $("#inp1").val();
             let legB = $("#inp2").val();
-            const pyt = formulas[num];
-            const answ = "c = " + pyt(legA,legB);
-            document.getElementById("results").innerHTML = answ;       
+            let pyt = formulas[num];
+            let result = "c = " + pyt(legA,legB);
+            document.getElementById("results").innerHTML = result;       
+        });
+    } 
+    //Distance (s * t) value: 5
+    function distForm(number) { 
+        $("#b1").on("click", function() {
+            let speed = $("#inp1").val();
+            let time =  $("#inp2").val(); 
+            
+            let distance = formulas[number];
+            let result = distance(speed, time);
+            document.getElementById("results").innerHTML = result; 
+        });
+    }
+    //Speed d/t value: 6
+    function speedForm(number) { 
+        $("#b1").on("click", function() {
+            let distance = $("#inp1").val();
+            let time = $("#inp2").val(); 
+            
+            let speed = formulas[number];
+            let result = speed(distance, time);
+            document.getElementById("results").innerHTML = result; 
+        });
+    }
+    //Time d/s value: 7
+    function timeForm(number) { 
+        $("#b1").on("click", function() {
+            let distance = $("#inp1").val();
+            let speed = $("#inp2").val(); 
+            let time = formulas[number];
+            let result = time(distance, speed);
+            document.getElementById("results").innerHTML =  result; 
         });
     }
     
     
     
-            
+    
+     
+    function test() {
+        let y = simpFormulas.speed(1000,25);
+    
+        alert(y);
+    }
+    
+    
 </script>
         
    
