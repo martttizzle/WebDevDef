@@ -29,6 +29,7 @@
            <option value=5>Distance</option>
            <option value=6>Speed</option>
            <option value=7>Time</option>
+           <option value=8>Tax in B.P.</option>
         </select>
           
        </form>
@@ -38,13 +39,14 @@
            <input type="text" placeholder="Enter second value..." id="inp2">
        </form>
        
-       <p class="para2">RESULTS:</p>
-       <p id="results"></p>
        <button id='b1'>ANSWER</button>
+       <p class="para2">RESULTS:</p>
+       <p class="arithmetic" id='ida'>here</p>
+       <p id="results"></p>
      </div>  
   </section>      
   <section>
-      <p>need to finish formulas<br>need to make it so one box appears for formulas with one value<br>
+      <p>need to make symbols match results<br>fade in the answer<br>
       need to make placeholder text show up write words for each formula type.<br>need to figure out how to make 
       one function to read formul input then on function to line it up with formula. 
       </p>
@@ -71,9 +73,10 @@
          width: 450px;
          height: 430px;
          background-color: pink;
+         border: 2.5px solid black;
          position:relative;
          left: 1000px;
-         top: 130px; 
+         top: 135px; 
          background-image: url(images/math.jpg);
          background-size: 442px;
     }
@@ -86,7 +89,7 @@
         position: relative;
         left: 100px;
         bottom: 300px;
-        width: 800px;
+        width: 830px;
         height: 500px;
         background-color:  yellow;
         color:green;
@@ -126,7 +129,7 @@
     .inputs #inp1 {
         visibility: hidden;
         position: relative;
-        left: 170px;
+        left: 140px;
         bottom: 87px;
         padding: 0px;
         margin: 0px;
@@ -135,7 +138,7 @@
     .inputs #inp2 {
         visibility: hidden;
         position: relative;
-        left: 191px;
+        left: 155px;
         bottom: 87px;
         padding: 0px;
         margin: 0px;
@@ -144,17 +147,28 @@
         padding: 0px;
         margin: 0px;
         visibility: hidden;
-        position: relative;
-        bottom: 55px;
+        position: absolute;
+        bottom: 299px;
         left: 525px;
+        width: 100px;
+        height: 30px;
+        text-shadow: .6px 1px black;
+        color: yellow;
+        background-color: yellowgreen;
+        border: 2px solid green;
     }
     #results{
+        display: none;
         position: relative;
         top: 163px;
         left: 180px;
-        font-size: 40px;
+        font-size: 45px;
         font-style: italic;
         font-weight: bold;
+        color: red;
+    }
+    arithmetic{
+        
     }
               
 </style>  
@@ -164,37 +178,51 @@ var simpFormulas = {
         pi: 3.14,
     
         Cel2Fah: function(x) {  
-           return ((x*1.8) +32);  
+            let f = ((x*1.8) +32);  
+              return f.toFixed(1);
         },
         Fah2Cel: function (x) { 
-            return ((x - 32) * 5/9);
+            let c = ((x - 32) * 5/9);
+              return c.toFixed(1);
         },
         permitSquare: function (x) { 
-            return ((+x + +x) + (+x + +x));
+            let ps = ((+x + +x) + (+x + +x));
+              return ps.toFixed(1);
         },
         areaSquare: function (x) { 
-            return (x * x);
-    
+            let a =(x * x);
+              return a.toFixed(1);
         },
         pyThag: function (legA, legB)  { 
             //pow(x,y) returns the value of x to the power of y
             let a = Math.pow(legA,2);
             let b = Math.pow(legB,2);
             let c = (a + b);
-            return Math.sqrt(c);
+            let pyT = Math.sqrt(c);
+              return pyT.toFixed(1);
         },
         distance: function (speed, time) { 
-             return (speed * time);
+             let d = (speed * time);
+               return d.toFixed(1);
         },
         speed: function (distance, time) { 
-            return (distance / time);
+             let s = (distance / time);
+               return s.toFixed(1); 
          },
         time: function (distance, speed) { 
-             return (distance / speed);
+             let t = (distance / speed);
+               return t.toFixed(1) ;
+        },
+        tax: function (price) {
+             let taxes = (price * (.07275));
+             let final = (+price + +taxes);
+               return final.toFixed(2);
         }
-   };//image matching formula
-    var clock, distance, pythag, speed, square, sqArea, fahrenheit, celsius, images;
-    clock =   "url(images/clock.jpeg)";
+             
+    };
+    //image matching formula
+    var clock, distance, pythag, speed, square, sqArea, fahrenheit, celsius, images, tax;
+    clock =    "url(images/clock.jpeg)";
     distance = "url(images/distance.png)";
     pythag =  "url(images/pythag.jpg)";
     speed =   "url(images/speed.jpg)";
@@ -202,13 +230,16 @@ var simpFormulas = {
     sqArea =  "url(images/sqarea.gif)";
     celsius = "url(images/celsius.jpg)";
     fahrenheit = "url(images/fahrenheit.jpg)";
+    tax   =   "url(images/tax.gif)";
+    var images = [fahrenheit, celsius, square, sqArea, pythag, distance, speed, clock, tax];
+    var nums =  [0,1,2,3,8]; //Single inputs
+    var nums1 = [4,5,6,7]; //Dual inputs
+    var singleVals = ["ENTER CELSIUS DEGREES...", "ENTER FAHRENHEIT DEGREES...", "ENTER LENGTH OF SIDE...", "ENTER LENGTH OF SIDE...","4","5","6","7","ENTER PRICE..."];
     
-    var images = [fahrenheit, celsius, square, sqArea, pythag, distance, speed, clock];
+    var dualValsA = ["0","1","2","3","ENTER LEG A...", "ENTER SPEED...", "ENTER DISTANCE...", "ENTER DISTANCE..."];
     
+    var dualValsB = ["0","1","2","3","ENTER LEG B...", "ENTER DISTANCE...", "ENTER TIME...", "ENTER SPEED..."];
 /************match pictures with formula**************/
-    
-    var nums =  [0,1,2,3];
-    var nums1 = [4,5,6,7];
     
    $("#formulas").change(function () { //.change give values of dropdown menu.
     let b = parseFloat($(this).val());
@@ -217,35 +248,44 @@ var simpFormulas = {
    });
 
     
+    /*add in the value text in input boxes*/
+    $("#formulas").change(function () { //.change give values of dropdown menu.
+    let b = parseFloat($(this).val());
+    for (let i = 0; i < nums.length; i++)  {    
+      if (b === nums[i]) { 
+        let text = singleVals[b];
+    $("#inp1").attr("placeholder", text).attr("size","28");
+   }
+    if (b === nums1[i]) {
+        let text1 =  dualValsA[b];
+        let text2 = dualValsB[b];
+    $("#inp1").attr("placeholder", text1).attr("size","28");
+    $("#inp2").attr("placeholder", text2).attr("size","28");
+      }
+    }
+  });
+
 /*Shows the next input boxes after formula is picked*/
     $("#formulas").change(function () { //.change give values of dropdown menu.
     let b = parseFloat($(this).val());
-      inputs(b);
-    });
-
-    function inputs(b) {
-     for (let i = 0; i < nums.length; i++)  {
-        if (b == nums[i]) {
-           $(".para1, #b1, #inp1").css("visibility", "visible");
-        }
-        if (b == nums1[i]) {
-           $("#inp1,#inp2").css("visibility", "visible");    
-        }
-     }
-    }
-    
-    
-        
-        
-        
-        
+        for (let i = 0; i < nums.length; i++)  { 
+        if(b === nums[i]) {
+            $(".para1, #b1, #inp1").css("visibility", "visible");
+             $("#inp2").hide();
+         }
+        else if (b === nums1[i]) {
+        $(".para1, #b1, #inp1, #inp2").css("visibility", "visible");
+          $("#inp2").show();
+            }    
+          }
+         });
+   
 /*Button to display for answer*/
    $("#b1").on("click", function() {
         $(".para2").css("visibility", "visible");      
    });
 
-    
-    var formulas = [simpFormulas.Cel2Fah, simpFormulas.Fah2Cel, simpFormulas.permitSquare, simpFormulas.areaSquare, simpFormulas.pyThag, simpFormulas.distance, simpFormulas.speed, simpFormulas.time];
+    var formulas = [simpFormulas.Cel2Fah, simpFormulas.Fah2Cel, simpFormulas.permitSquare, simpFormulas.areaSquare, simpFormulas.pyThag, simpFormulas.distance, simpFormulas.speed, simpFormulas.time, simpFormulas.tax];
     
     
     
@@ -286,6 +326,10 @@ var simpFormulas = {
            
         case 7:
         timeForm(formNum);
+        break; 
+        
+        case 8:
+        taxBP(formNum);
         break;    
             
         default:
@@ -296,9 +340,8 @@ var simpFormulas = {
     function c2f(num) {
         $("#b1").on("click", function() {
             let degrees = $("#inp1").val();
-            let fahr= formulas[num];
-            let result = fahr(degrees);
-            document.getElementById("results").innerHTML = result;       
+            let fahr= formulas[num];  
+             resultsFade(fahr(degrees) );
         });
     }  
     //Celsius value: 1
@@ -306,8 +349,7 @@ var simpFormulas = {
         $("#b1").on("click", function() {
             let degrees = $("#inp1").val();
             let cels = formulas[num];
-            let result = cels(degrees);
-            document.getElementById("results").innerHTML = result;       
+             resultsFade(cels(degrees));
         });
     }  
     //perimeter of a square value: 2
@@ -315,8 +357,8 @@ var simpFormulas = {
         $("#b1").on("click", function() {
             let side = $("#inp1").val();
             let perimeter = formulas[num];
-            let result = perimeter(side) + " total";
-            document.getElementById("results").innerHTML = result;       
+             resultsFade( perimeter(side) + " total");
+                    
         });
     }  
     //area of a square value: 3
@@ -324,19 +366,16 @@ var simpFormulas = {
         $("#b1").on("click", function() {
             let side = $("#inp1").val();
             let area = formulas[num];
-            let result = area(side) + "sq";
-            document.getElementById("results").innerHTML = result;       
+             resultsFade( area(side) + "sq");
         });
     } 
-    
     //pythag formula value: 4
     function pyTG(num) {
         $("#b1").on("click", function() {
             let legA = $("#inp1").val();
             let legB = $("#inp2").val();
             let pyt = formulas[num];
-            let result = "c = " + pyt(legA,legB);
-            document.getElementById("results").innerHTML = result;       
+             resultsFade("c = " + pyt(legA,legB));       
         });
     } 
     //Distance (s * t) value: 5
@@ -344,10 +383,8 @@ var simpFormulas = {
         $("#b1").on("click", function() {
             let speed = $("#inp1").val();
             let time =  $("#inp2").val(); 
-            
             let distance = formulas[number];
-            let result = distance(speed, time);
-            document.getElementById("results").innerHTML = result; 
+             resultsFade(distance(speed, time));
         });
     }
     //Speed d/t value: 6
@@ -355,10 +392,8 @@ var simpFormulas = {
         $("#b1").on("click", function() {
             let distance = $("#inp1").val();
             let time = $("#inp2").val(); 
-            
             let speed = formulas[number];
-            let result = speed(distance, time);
-            document.getElementById("results").innerHTML = result; 
+             resultsFade(speed(distance, time));
         });
     }
     //Time d/s value: 7
@@ -367,19 +402,44 @@ var simpFormulas = {
             let distance = $("#inp1").val();
             let speed = $("#inp2").val(); 
             let time = formulas[number];
-            let result = time(distance, speed);
-            document.getElementById("results").innerHTML =  result; 
+            resultsFade(time(distance, speed));
         });
     }
+    //Tax in B.P. value: 8
+    function taxBP(number) { 
+        $("#b1").on("click", function() {
+            let price = $("#inp1").val();
+            let tax = formulas[number];
+            resultsFade("$"+tax(price));
+            arithmatic(price, tax(price));
+        });
+        
+        
+    }
+    /*fading in answer*/
+    function resultsFade(x) {
+        document.getElementById("results").innerHTML = x;
+          $("#results").fadeIn(2000);    
+    }    
     
-    
+    function arithmatic(price, tax) {
+        let b = tax.slice(2);
+        let a = price;
+        
+      //  let x = price + " + " +(b-price);
+         
+        alert(b);
+     
+        
+        // document.getElementById("ida").innerHTML = x;
+        
+    }
     
     
      
     function test() {
-        let y = simpFormulas.speed(1000,25);
-    
-        alert(y);
+    let w = simpFormulas.tax(2.99);
+        alert(w);
     }
     
     
@@ -387,4 +447,4 @@ var simpFormulas = {
         
    
     </body>
-</html>
+</html>;
