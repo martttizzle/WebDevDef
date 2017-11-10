@@ -46,9 +46,8 @@
      </div>  
   </section>      
   <section>
-      <p>need to make symbols match results<br>fade in the answer<br>
-      need to make placeholder text show up write words for each formula type.<br>need to figure out how to make 
-      one function to read formul input then on function to line it up with formula. 
+      <p>slidedown formula then the results come in after<br>fade in the answer<br>
+      need to make placeholder text show up write words for each formula type.<br>Need to add commas and need to make tax show full amount. 
       </p>
   </section>        
         
@@ -160,16 +159,23 @@
     #results{
         display: none;
         position: relative;
-        top: 163px;
+        top: 99.01px;
         left: 180px;
         font-size: 45px;
         font-style: italic;
         font-weight: bold;
         color: red;
     }
-    arithmetic{
-        
+    .arithmetic {
+        position: relative;
+        top: 80px;
+        left: 230px;
+        font-size: 50px;
+        color: red;
+        margin: 0px;
+        padding: 0px;
     }
+    
               
 </style>  
 <script>
@@ -419,28 +425,29 @@ var simpFormulas = {
     /*fading in answer*/
     function resultsFade(x) {
         document.getElementById("results").innerHTML = x;
-          $("#results").fadeIn(2000);    
+          $("#results").fadeIn(3000);    
     }    
     
-    function arithmatic(price, tax) {
-        let b = tax.slice(2);
-        let a = price;
-        
-      //  let x = price + " + " +(b-price);
-         
-        alert(b);
-     
-        
-        // document.getElementById("ida").innerHTML = x;
-        
-    }
+    /*placing formula on page*/
+    function arithmatic(price,tax) {
+        let b = (tax - price);
+        let c = b.toString();
+        let taxes = c.slice(0,4);
+        let x = "$"+price + " + " +"$"+taxes;
+       
+          document.getElementById("ida").innerHTML = x;
+    };
     
     
      
-    function test() {
+     function test() {
     let w = simpFormulas.tax(2.99);
-        alert(w);
-    }
+        //alert(w);
+        $("#b2").click(function(){
+        $("#ida").slideDown();
+       
+        });
+    } 
     
     
 </script>
